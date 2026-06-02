@@ -7,38 +7,59 @@
 
     <Grid RowDefinitions="*,Auto" Padding="16" RowSpacing="12">
 
-        <CollectionView Grid.Row="0"
-                        ItemsSource="{Binding Medications}">
+        <CollectionView Grid.Row="0" ItemsSource="{Binding Medications}">
             <CollectionView.EmptyView>
                 <Label Text="Keine Medikamente eingetragen."
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"
-                       TextColor="Gray" />
+                       Style="{StaticResource SecondaryLabelStyle}" />
             </CollectionView.EmptyView>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="dto:MedicationDto">
-                    <Grid ColumnDefinitions="*,Auto" Padding="0,8">
-                        <VerticalStackLayout Grid.Column="0" Spacing="2">
-                            <Label Text="{Binding Name}" FontAttributes="Bold" />
-                            <Label Text="{Binding Dosage}" TextColor="Gray" FontSize="13" />
-                            <Label Text="{Binding CurrentStock, StringFormat='Bestand: {0}'}"
-                                   TextColor="{Binding IsStockLow, Converter={StaticResource StockColorConverter}}"
-                                   FontSize="12" />
-                        </VerticalStackLayout>
-                        <Button Grid.Column="1"
-                                Text="Entfernen"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
-                                CommandParameter="{Binding .}"
-                                BackgroundColor="Transparent"
-                                TextColor="Red" />
-                    </Grid>
+                    <Border Style="{StaticResource CardStyle}">
+                        <Grid ColumnDefinitions="*,Auto,Auto">
+
+                            <!-- Info -->
+                            <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold" FontSize="15" />
+                                <Label Text="{Binding Dosage}"
+                                       Style="{StaticResource SecondaryLabelStyle}" />
+                                <Label Text="{Binding CurrentStock, StringFormat='Bestand: {0}'}"
+                                       TextColor="{Binding IsStockLow,
+                                           Converter={StaticResource StockColorConverter}}"
+                                       FontSize="12" />
+                            </VerticalStackLayout>
+
+                            <!-- Bearbeiten -->
+                            <Button Grid.Column="1"
+                                    Text="✏"
+                                    BackgroundColor="Transparent"
+                                    TextColor="{StaticResource Primary}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}},
+                                        Path=BindingContext.EditCommand}"
+                                    CommandParameter="{Binding .}"
+                                    WidthRequest="44" Padding="0" />
+
+                            <!-- Entfernen -->
+                            <Button Grid.Column="2"
+                                    Text="✕"
+                                    Style="{StaticResource DangerButtonStyle}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}},
+                                        Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding .}"
+                                    WidthRequest="44" Padding="0" />
+
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
         <Button Grid.Row="1"
                 Text="Medikament hinzufügen"
-                Command="{Binding LoadCommand}" />
+                Command="{Binding AddCommand}"
+                Style="{StaticResource PrimaryButtonStyle}" />
 
     </Grid>
 
