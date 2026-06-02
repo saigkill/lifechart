@@ -15,11 +15,15 @@ public class MedicationConfiguration : IEntityTypeConfiguration<Medication>
 
         builder.OwnsMany(m => m.IntakeTimes, b =>
         {
-            b.ToJson();
+            b.WithOwner().HasForeignKey("MedicationId");
             b.Property(i => i.Time)
                 .HasConversion(
                     v => v.ToString("HH:mm"),
-                    v => TimeOnly.Parse(v));
+                    v => TimeOnly.Parse(v))
+                .HasColumnName("time");
+            b.Property(i => i.DoseCount)
+                .HasColumnName("dose_count");
+            b.HasKey("MedicationId", "time");
         });
     }
 }
