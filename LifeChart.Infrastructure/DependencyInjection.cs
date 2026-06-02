@@ -2,6 +2,7 @@ using LifeChart.Application.Interfaces;
 using LifeChart.Domain.Entries;
 using LifeChart.Domain.Medications;
 using LifeChart.Infrastructure.CrisisResources;
+using LifeChart.Infrastructure.Pdf;
 using LifeChart.Infrastructure.Persistence;
 using LifeChart.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,9 @@ public static class DependencyInjection
 
         services.AddScoped<IDailyEntryRepository, DailyEntryRepository>();
         services.AddScoped<IMedicationRepository, MedicationRepository>();
+
+        // PDF
+        services.AddScoped<IPdfRenderer, PdfSharpRenderer>();
 
         // Crisis resources
         services.AddHttpClient<FindAHelplineService>();
