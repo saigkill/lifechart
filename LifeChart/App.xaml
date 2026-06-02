@@ -13,6 +13,7 @@
             <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
             <converters:StockColorConverter x:Key="StockColorConverter" />
             <converters:IsNextcloudConverter x:Key="IsNextcloudConverter" />
+            <converters:IsNotNullConverter x:Key="IsNotNullConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -33,6 +33,7 @@ public static class MauiProgram
 
         // Services
         builder.Services.AddSingleton<MedicationFormService>();
+        builder.Services.AddSingleton<IBiometricService, PluginFingerprintBiometricService>();
 
 #if ANDROID
         builder.Services.AddSingleton<IAlarmService,
@@ -49,6 +50,7 @@ public static class MauiProgram
         builder.Services.AddTransient<SettingsViewModel>();
         builder.Services.AddTransient<CrisisViewModel>();
         builder.Services.AddTransient<OnboardingViewModel>();
+        builder.Services.AddTransient<LockViewModel>();
 
         // Pages
         builder.Services.AddTransient<TodayPage>();
@@ -58,6 +60,7 @@ public static class MauiProgram
         builder.Services.AddTransient<SettingsPage>();
         builder.Services.AddTransient<CrisisPage>();
         builder.Services.AddTransient<OnboardingPage>();
+        builder.Services.AddTransient<LockPage>();
         builder.Services.AddTransient<AppShell>();
         builder.Services.AddSingleton<App>();
 

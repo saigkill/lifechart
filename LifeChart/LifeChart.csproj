@@ -22,6 +22,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LifeChart.Application\LifeChart.Application.csproj" />
     <ProjectReference Include="..\LifeChart.Infrastructure\LifeChart.Infrastructure.csproj" />
   </ItemGroup>
