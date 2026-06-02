@@ -1,6 +1,8 @@
 using LifeChart.Application;
+using LifeChart.Application.Settings;
 using LifeChart.Infrastructure;
 using LifeChart.Pages;
+using LifeChart.Services;
 using LifeChart.ViewModels;
 using Microsoft.Extensions.Logging;
 
@@ -24,6 +26,9 @@ public static class MauiProgram
         builder.Services
             .AddApplication()
             .AddInfrastructure();
+
+        // Settings
+        builder.Services.AddSingleton<ISettingsService, MauiPreferencesSettingsService>();
 
         // ViewModels
         builder.Services.AddTransient<TodayViewModel>();
