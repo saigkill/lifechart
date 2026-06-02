@@ -7,14 +7,27 @@ public partial class App : Application
 {
     public AppSettings Settings { get; }
 
-    public App(ISettingsService settingsService, OnboardingPage onboardingPage, AppShell shell)
+    public App(
+        ISettingsService settingsService,
+        OnboardingPage onboardingPage,
+        LockPage lockPage,
+        AppShell shell)
     {
         InitializeComponent();
         Settings = settingsService.Load();
 
-        // Onboarding wenn Abend-Erinnerung noch nicht konfiguriert
-        MainPage = Settings.EveningReminderTime is null
-            ? new NavigationPage(onboardingPage)
-            : shell;
+        // Reihenfolge: Onboarding → Lock → Shell
+        if (Settings.EveningReminderTime is null)
+        {
+            MainPage = new NavigationPage(onboardingPage);
+        }
+        else if (Settings.BiometricsEnabled)
+        {
+            MainPage = lockPage;
+        }
+        else
+        {
+            MainPage = shell;
+        }
     }
 }
