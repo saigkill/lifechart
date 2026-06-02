@@ -1,0 +1,35 @@
+# Build output
+bin/
+obj/
+out/
+
+# EF Core Migrations (generated, not committed)
+# Remove this line if you want to commit migrations
+# */Migrations/
+
+# User-specific files
+*.user
+*.suo
+.vs/
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+*.apk
+*.aab
+
+# Windows
+*.msix
+*.msixbundle
+
+# Secrets — never commit
+*.keystore
+*.pfx
+local.settings.json

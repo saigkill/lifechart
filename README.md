@@ -1,0 +1,74 @@
+# LifeChart
+
+A mood and wellness tracker for people with bipolar disorder, based on the [NIMH Life Chart methodology](https://www.nimh.nih.gov/).
+
+Developed by someone affected, for those affected.
+
+## About
+
+LifeChart helps you document your daily mood and functionality, track medication, and generate progress reports for your psychiatrist. It is a personal self-observation tool — not a medical device.
+
+**If you are in crisis, please contact a crisis helpline in your country.**
+Germany: Telefonseelsorge **0800 111 0 111** (free, 24/7)
+
+## Features
+
+- Daily entry wizard (quick mode: 2 sliders; full mode: complete form)
+- Mood and functionality tracking on a −5 to +5 scale
+- Sleep hours, medication tracking, symptom notes
+- Medication management with stock levels and intake alarms
+- Chart view (30/60/90-day trends)
+- PDF export including chart, daily table, notes, and medication list
+- Automatic backup to Google Drive or Nextcloud
+- Full anonymity — no account required, no data leaves your device without your consent
+
+## Platforms
+
+| Platform | Status |
+|----------|--------|
+| Android  | Planned |
+| Windows  | Planned |
+| Linux    | See [GNOME LifeChart](https://gitlab.gnome.org/saigkill/gnome-lifechart) |
+
+## Architecture
+
+Clean Architecture with DDD-Lite:
+
+```
+LifeChart/              ← MAUI UI + ViewModels
+LifeChart.Domain/       ← Entities, Value Objects, Repository Interfaces
+LifeChart.Application/  ← Use Cases, DTOs, Service Interfaces
+LifeChart.Infrastructure/ ← EF Core, Repositories, Backup, PDF
+LifeChart.Tests/        ← Unit Tests
+```
+
+## Building
+
+Requires .NET 10 with MAUI workload on Windows or macOS:
+
+```bash
+dotnet workload install maui
+dotnet build LifeChart.sln
+```
+
+Android APK:
+```bash
+dotnet publish LifeChart/LifeChart.csproj -f net10.0-android -c Release
+```
+
+Windows:
+```bash
+dotnet publish LifeChart/LifeChart.csproj -f net10.0-windows10.0.19041.0 -c Release
+```
+
+## Disclaimer
+
+LifeChart is a personal self-monitoring tool. It is not a medical device as defined by EU Regulation 2017/745 (MDR). The app does not provide medical diagnoses and does not replace medical or psychiatric treatment. Use at your own risk.
+
+## License
+
+GNU General Public License v3 or later — see [LICENSE](LICENSE).
+
+## Related
+
+- [GNOME LifeChart](https://gitlab.gnome.org/saigkill/gnome-lifechart) — the Linux desktop version (Vala/GTK4)
