@@ -2,8 +2,8 @@ namespace LifeChart.Domain.Medications;
 
 public record IntakeTime
 {
-    public TimeOnly Time { get; }
-    public int DoseCount { get; }
+    public TimeOnly Time { get; private set; }
+    public int DoseCount { get; private set; }
 
     public IntakeTime(TimeOnly time, int doseCount)
     {
@@ -13,4 +13,6 @@ public record IntakeTime
         Time = time;
         DoseCount = doseCount;
     }
+
+    private IntakeTime() { }
 }
