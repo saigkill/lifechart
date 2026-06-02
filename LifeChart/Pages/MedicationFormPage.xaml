@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LifeChart.ViewModels"
+             x:Class="LifeChart.Pages.MedicationFormPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abbrechen" Command="{Binding CancelCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="14">
+
+            <!-- Name -->
+            <Label Text="Name *" Style="{StaticResource BodyLabelStyle}" />
+            <Entry Placeholder="z.B. Lithium"
+                   Text="{Binding Name}"
+                   MaxLength="200" />
+
+            <!-- Dosierung -->
+            <Label Text="Dosierung" Style="{StaticResource BodyLabelStyle}" />
+            <Entry Placeholder="z.B. 600mg"
+                   Text="{Binding Dosage}"
+                   MaxLength="100" />
+
+            <!-- Bestand -->
+            <Grid ColumnDefinitions="*,16,*" RowDefinitions="Auto,Auto">
+                <Label Grid.Column="0" Text="Mindestbestand"
+                       Style="{StaticResource BodyLabelStyle}" />
+                <Label Grid.Column="2" Text="Aktueller Bestand"
+                       Style="{StaticResource BodyLabelStyle}" />
+
+                <Entry Grid.Row="1" Grid.Column="0"
+                       Text="{Binding MinStock}"
+                       Keyboard="Numeric" />
+                <Entry Grid.Row="1" Grid.Column="2"
+                       Text="{Binding CurrentStock}"
+                       Keyboard="Numeric" />
+            </Grid>
+
+            <!-- Einnahmezeiten -->
+            <Label Text="Einnahmezeiten" Style="{StaticResource SectionHeaderStyle}" />
+
+            <CollectionView ItemsSource="{Binding IntakeTimes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:IntakeTimeEntryViewModel">
+                        <Grid ColumnDefinitions="*,60,40" Padding="0,4" ColumnSpacing="8">
+
+                            <TimePicker Grid.Column="0"
+                                        Time="{Binding Time}" />
+
+                            <Entry Grid.Column="1"
+                                   Text="{Binding DoseCount}"
+                                   Keyboard="Numeric"
+                                   Placeholder="Dosis" />
+
+                            <Button Grid.Column="2"
+                                    Text="✕"
+                                    Style="{StaticResource DangerButtonStyle}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}},
+                                        Path=BindingContext.RemoveIntakeTimeCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Padding="0" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="+ Einnahmezeit hinzufügen"
+                    Command="{Binding AddIntakeTimeCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource Primary}" />
+
+            <BoxView HeightRequest="1" Color="{StaticResource Separator}"
+                     Margin="0,4" />
+
+            <!-- Speichern -->
+            <Button Text="Speichern"
+                    Command="{Binding SaveCommand}"
+                    Style="{StaticResource PrimaryButtonStyle}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

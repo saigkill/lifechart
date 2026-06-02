@@ -30,10 +30,14 @@ public static class MauiProgram
         // Settings
         builder.Services.AddSingleton<ISettingsService, MauiPreferencesSettingsService>();
 
+        // Services
+        builder.Services.AddSingleton<MedicationFormService>();
+
         // ViewModels
         builder.Services.AddTransient<TodayViewModel>();
         builder.Services.AddTransient<ChartViewModel>();
         builder.Services.AddTransient<MedicationsViewModel>();
+        builder.Services.AddTransient<MedicationFormViewModel>();
         builder.Services.AddTransient<SettingsViewModel>();
         builder.Services.AddTransient<CrisisViewModel>();
         builder.Services.AddTransient<OnboardingViewModel>();
@@ -42,6 +46,7 @@ public static class MauiProgram
         builder.Services.AddTransient<TodayPage>();
         builder.Services.AddTransient<ChartPage>();
         builder.Services.AddTransient<MedicationsPage>();
+        builder.Services.AddTransient<MedicationFormPage>();
         builder.Services.AddTransient<SettingsPage>();
         builder.Services.AddTransient<CrisisPage>();
         builder.Services.AddTransient<OnboardingPage>();
