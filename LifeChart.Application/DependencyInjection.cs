@@ -19,6 +19,7 @@ public static class DependencyInjection
         services.AddScoped<GetChartDataUseCase>();
 
         services.AddScoped<GetActiveMedicationsUseCase>();
+        services.AddScoped<SaveMedicationUseCase>();
         services.AddScoped<DeactivateMedicationUseCase>();
 
         services.AddScoped<ExportPdfUseCase>();

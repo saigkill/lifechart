@@ -29,6 +29,21 @@ public class Medication
 
     public bool IsStockLow => CurrentStock <= MinStock;
 
+    public void Update(
+        string name,
+        string dosage,
+        int minStock,
+        int currentStock,
+        IEnumerable<IntakeTime> intakeTimes)
+    {
+        Name = name;
+        Dosage = dosage;
+        MinStock = minStock;
+        CurrentStock = currentStock;
+        _intakeTimes.Clear();
+        _intakeTimes.AddRange(intakeTimes);
+    }
+
     public void Deactivate() => Active = false;
 
     private Medication() { }
