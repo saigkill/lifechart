@@ -9,8 +9,13 @@ public class AppSettings
     // Backup
     public CloudProvider BackupProvider { get; set; } = CloudProvider.None;
     public string? NextcloudUrl { get; set; }
+    public string? NextcloudUsername { get; set; }
+    public string? NextcloudPassword { get; set; }
+    public string? GoogleDriveAccessToken { get; set; }
+    public string? GoogleDriveRefreshToken { get; set; }
     public bool AutoBackupEnabled { get; set; } = true;
     public int BackupWarningThresholdDays { get; set; } = 7;
+    public DateTime? LastBackupAt { get; set; }
 
     // Benachrichtigungen
     public bool EveningReminderEnabled { get; set; } = true;

@@ -23,6 +23,13 @@ public class CreateBackupUseCase
     {
         var settings = _settings.Load();
         if (!settings.AutoBackupEnabled) return;
+
+        if (settings.LastBackupAt.HasValue &&
+            DateTime.UtcNow - settings.LastBackupAt.Value < TimeSpan.FromHours(24))
+            return;
+
         await _backupProvider.BackupAsync(_dbPath);
+        settings.LastBackupAt = DateTime.UtcNow;
+        await _settings.SaveAsync(settings);
     }
 }
