@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Pages.ChartPage"
+             Title="Verlauf">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="16" RowSpacing="12">
+
+        <!-- Zeitraum-Auswahl -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="8" HorizontalOptions="Center">
+            <Button Text="30 Tage"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="30" />
+            <Button Text="60 Tage"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="60" />
+            <Button Text="90 Tage"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="90" />
+        </HorizontalStackLayout>
+
+        <!-- Chart Platzhalter — wird durch LiveCharts2 ersetzt -->
+        <BoxView Grid.Row="1"
+                 BackgroundColor="#F5F5F5"
+                 CornerRadius="8" />
+
+        <!-- Legende -->
+        <HorizontalStackLayout Grid.Row="1"
+                               HorizontalOptions="Start"
+                               VerticalOptions="End"
+                               Margin="8" Spacing="16">
+            <HorizontalStackLayout Spacing="4">
+                <BoxView Color="#0072B2" WidthRequest="24" HeightRequest="4"
+                         VerticalOptions="Center" />
+                <Label Text="Stimmung" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="4">
+                <BoxView Color="#E69F00" WidthRequest="24" HeightRequest="4"
+                         VerticalOptions="Center" />
+                <Label Text="Funktionsfähigkeit" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <!-- PDF Export -->
+        <Button Grid.Row="2"
+                Text="Als PDF exportieren"
+                Command="{Binding ExportPdfCommand}"
+                IsEnabled="{Binding IsExporting, Converter={StaticResource InvertedBoolConverter}}" />
+
+    </Grid>
+
+</ContentPage>

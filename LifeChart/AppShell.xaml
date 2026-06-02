@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:LifeChart.Pages"
+       x:Class="LifeChart.AppShell">
+
+    <TabBar>
+        <ShellContent Title="Heute"
+                      Icon="tab_today.png"
+                      ContentTemplate="{DataTemplate pages:TodayPage}"
+                      Route="TodayPage" />
+
+        <ShellContent Title="Verlauf"
+                      Icon="tab_chart.png"
+                      ContentTemplate="{DataTemplate pages:ChartPage}"
+                      Route="ChartPage" />
+
+        <ShellContent Title="Medikamente"
+                      Icon="tab_medications.png"
+                      ContentTemplate="{DataTemplate pages:MedicationsPage}"
+                      Route="MedicationsPage" />
+    </TabBar>
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="16" Spacing="8">
+            <Button Text="Einstellungen"
+                    Command="{Binding Source={RelativeSource Self},
+                        Path=BindingContext.NavigateToSettingsCommand}" />
+            <Button Text="🆘 Krisentelefon"
+                    TextColor="#CC0000"
+                    BackgroundColor="Transparent"
+                    Command="{Binding Source={RelativeSource Self},
+                        Path=BindingContext.NavigateToCrisisCommand}" />
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>
