@@ -1,4 +1,5 @@
 using LifeChart.Application;
+using LifeChart.Application.Interfaces;
 using LifeChart.Application.Settings;
 using LifeChart.Infrastructure;
 using LifeChart.Pages;
@@ -32,6 +33,13 @@ public static class MauiProgram
 
         // Services
         builder.Services.AddSingleton<MedicationFormService>();
+
+#if ANDROID
+        builder.Services.AddSingleton<IAlarmService,
+            LifeChart.Platforms.Android.Services.AndroidAlarmService>();
+#else
+        builder.Services.AddSingleton<IAlarmService, NullAlarmService>();
+#endif
 
         // ViewModels
         builder.Services.AddTransient<TodayViewModel>();
