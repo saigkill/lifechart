@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using LifeChart.Application.DTOs;
+using LifeChart.Application.Interfaces;
 using LifeChart.Application.UseCases.Medications;
 using LifeChart.Services;
 using System.Collections.ObjectModel;
@@ -10,6 +11,8 @@ namespace LifeChart.ViewModels;
 public partial class MedicationFormViewModel : ObservableObject
 {
     private readonly SaveMedicationUseCase _saveMedication;
+    private readonly GetActiveMedicationsUseCase _getMedications;
+    private readonly IAlarmService _alarmService;
     private readonly MedicationFormService _formService;
 
     [ObservableProperty] private int _medicationId;
@@ -24,9 +27,13 @@ public partial class MedicationFormViewModel : ObservableObject
 
     public MedicationFormViewModel(
         SaveMedicationUseCase saveMedication,
+        GetActiveMedicationsUseCase getMedications,
+        IAlarmService alarmService,
         MedicationFormService formService)
     {
         _saveMedication = saveMedication;
+        _getMedications = getMedications;
+        _alarmService = alarmService;
         _formService = formService;
     }
 
@@ -89,8 +96,12 @@ public partial class MedicationFormViewModel : ObservableObject
                 .AsReadOnly());
 
         await _saveMedication.ExecuteAsync(dto);
-        _formService.EditTarget = null;
 
+        // Alarme für alle aktiven Medikamente neu planen
+        var allMedications = await _getMedications.ExecuteAsync();
+        await _alarmService.ScheduleAsync(allMedications);
+
+        _formService.EditTarget = null;
         SaveCompleted?.Invoke(this, EventArgs.Empty);
     }
 
