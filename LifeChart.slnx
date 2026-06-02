@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="LifeChart.Application/LifeChart.Application.csproj" />
+  <Project Path="LifeChart.Domain/LifeChart.Domain.csproj" />
+  <Project Path="LifeChart.Infrastructure/LifeChart.Infrastructure.csproj" />
+  <Project Path="LifeChart.Tests/LifeChart.Tests.csproj" />
+  <Project Path="LifeChart/LifeChart.csproj" />
+</Solution>
