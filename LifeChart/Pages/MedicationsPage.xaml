@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dto="clr-namespace:LifeChart.Application.DTOs;assembly=LifeChart.Application"
+             x:Class="LifeChart.Pages.MedicationsPage"
+             Title="Medikamente">
+
+    <Grid RowDefinitions="*,Auto" Padding="16" RowSpacing="12">
+
+        <CollectionView Grid.Row="0"
+                        ItemsSource="{Binding Medications}">
+            <CollectionView.EmptyView>
+                <Label Text="Keine Medikamente eingetragen."
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       TextColor="Gray" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="dto:MedicationDto">
+                    <Grid ColumnDefinitions="*,Auto" Padding="0,8">
+                        <VerticalStackLayout Grid.Column="0" Spacing="2">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding Dosage}" TextColor="Gray" FontSize="13" />
+                            <Label Text="{Binding CurrentStock, StringFormat='Bestand: {0}'}"
+                                   TextColor="{Binding IsStockLow, Converter={StaticResource StockColorConverter}}"
+                                   FontSize="12" />
+                        </VerticalStackLayout>
+                        <Button Grid.Column="1"
+                                Text="Entfernen"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
+                                CommandParameter="{Binding .}"
+                                BackgroundColor="Transparent"
+                                TextColor="Red" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="1"
+                Text="Medikament hinzufügen"
+                Command="{Binding LoadCommand}" />
+
+    </Grid>
+
+</ContentPage>

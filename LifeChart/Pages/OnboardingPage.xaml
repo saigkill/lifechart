@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Pages.OnboardingPage"
+             Title="Willkommen"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Willkommen bei LifeChart"
+                   FontSize="24" FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Entwickelt von einem Betroffenen, für Betroffene."
+                   HorizontalTextAlignment="Center"
+                   TextColor="Gray" />
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <!-- Disclaimer -->
+            <Border Padding="16" BackgroundColor="#FFF8E1" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Hinweis" FontAttributes="Bold" />
+                    <Label Text="LifeChart ist ein persönliches Tagebuch zur Selbstbeobachtung. Es ersetzt keine psychiatrische Behandlung und ist kein Medizinprodukt. Der Verlaufsbericht ist eine persönliche Gedächtnisstütze — kein klinisches Dokument."
+                           FontSize="13" />
+                    <Label Text="In einer Krise: Telefonseelsorge 0800 111 0 111 (kostenlos, 24/7)"
+                           FontSize="13" FontAttributes="Bold" TextColor="#0072B2" />
+                </VerticalStackLayout>
+            </Border>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,8" />
+
+            <!-- Abend-Erinnerung -->
+            <Label Text="Wann möchtest du abends erinnert werden?"
+                   FontAttributes="Bold" />
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding ReminderEnabled}" />
+                <Label Text="Abend-Erinnerung aktivieren" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8"
+                IsVisible="{Binding ReminderEnabled}">
+                <Label Text="Uhrzeit:" VerticalOptions="Center" />
+                <TimePicker Time="{Binding ReminderTime}" />
+            </HorizontalStackLayout>
+
+            <Button Text="Los geht's"
+                    Command="{Binding CompleteCommand}"
+                    BackgroundColor="#0072B2"
+                    TextColor="White"
+                    Margin="0,16,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
