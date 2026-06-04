@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+
+  <!-- Common -->
+  <data name="Common_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Common_Edit" xml:space="preserve"><value>Edit</value></data>
+  <data name="Common_Error" xml:space="preserve"><value>Error</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Name" xml:space="preserve"><value>Name</value></data>
+  <data name="Common_Password" xml:space="preserve"><value>Password</value></data>
+  <data name="Common_Username" xml:space="preserve"><value>Username</value></data>
+  <data name="Common_Time" xml:space="preserve"><value>Time:</value></data>
+  <data name="Common_ErrorFmt" xml:space="preserve"><value>Error: {0}</value></data>
+
+  <!-- Today -->
+  <data name="Today_Title" xml:space="preserve"><value>Today</value></data>
+  <data name="Today_EntryFor" xml:space="preserve"><value>Entry for {0}</value></data>
+  <data name="Today_HowAreYou" xml:space="preserve"><value>How are you today?</value></data>
+  <data name="Today_Mood" xml:space="preserve"><value>Mood</value></data>
+  <data name="Today_Functionality" xml:space="preserve"><value>Functionality</value></data>
+  <data name="Today_Sleep" xml:space="preserve"><value>Sleep (hours)</value></data>
+  <data name="Today_SleepValue" xml:space="preserve"><value>{0} h</value></data>
+  <data name="Today_MedicationTaken" xml:space="preserve"><value>Medication taken</value></data>
+  <data name="Today_MenstrualCycle" xml:space="preserve"><value>Menstrual cycle</value></data>
+  <data name="Today_Hypomania" xml:space="preserve"><value>Hypomania / Mixed Episode</value></data>
+  <data name="Today_Symptoms" xml:space="preserve"><value>Symptoms</value></data>
+  <data name="Today_SymptomsPlaceholder" xml:space="preserve"><value>Symptoms (optional)</value></data>
+  <data name="Today_Notes" xml:space="preserve"><value>Notes</value></data>
+  <data name="Today_NotesPlaceholder" xml:space="preserve"><value>Notes (optional)</value></data>
+  <data name="Today_More" xml:space="preserve"><value>More...</value></data>
+  <data name="Today_Saved" xml:space="preserve"><value>Entry saved.</value></data>
+  <data name="Today_AlreadySaved" xml:space="preserve"><value>Entry already saved today.</value></data>
+  <data name="Today_CriticalValues" xml:space="preserve"><value>Saved. Warning: critical values detected.</value></data>
+  <data name="Today_ShowCrisisResources" xml:space="preserve"><value>Show crisis resources</value></data>
+  <data name="Today_InputModeTitle" xml:space="preserve"><value>Choose input mode</value></data>
+  <data name="Today_InputModeQuick" xml:space="preserve"><value>Quick (Mood + Functionality)</value></data>
+  <data name="Today_InputModeFull" xml:space="preserve"><value>Full (all fields)</value></data>
+
+  <!-- Medications -->
+  <data name="Medications_Title" xml:space="preserve"><value>Medications</value></data>
+  <data name="Medications_ActiveList" xml:space="preserve"><value>Active medications</value></data>
+  <data name="Medications_Empty" xml:space="preserve"><value>No medications entered.</value></data>
+  <data name="Medications_AddNew" xml:space="preserve"><value>+ New</value></data>
+  <data name="Medications_AddTitle" xml:space="preserve"><value>Add medication</value></data>
+  <data name="Medications_StockFmt" xml:space="preserve"><value>Stock: {0} (Min: {1})</value></data>
+  <data name="Medications_IntakeFmt" xml:space="preserve"><value>Intake: {0}</value></data>
+  <data name="Medications_DeleteTitle" xml:space="preserve"><value>Delete medication</value></data>
+  <data name="Medications_DeleteConfirmFmt" xml:space="preserve"><value>Really delete '{0}'?</value></data>
+
+  <!-- Medication Form -->
+  <data name="MedForm_TitleAdd" xml:space="preserve"><value>Add medication</value></data>
+  <data name="MedForm_TitleEdit" xml:space="preserve"><value>Edit medication</value></data>
+  <data name="MedForm_Dosage" xml:space="preserve"><value>Dosage</value></data>
+  <data name="MedForm_DosagePlaceholder" xml:space="preserve"><value>e.g. 400mg</value></data>
+  <data name="MedForm_NamePlaceholder" xml:space="preserve"><value>e.g. Lithium</value></data>
+  <data name="MedForm_MinStock" xml:space="preserve"><value>Minimum stock</value></data>
+  <data name="MedForm_CurrentStock" xml:space="preserve"><value>Current stock</value></data>
+  <data name="MedForm_IntakeTimes" xml:space="preserve"><value>Intake times</value></data>
+  <data name="MedForm_AddTime" xml:space="preserve"><value>+ Intake time</value></data>
+  <data name="MedForm_Doses" xml:space="preserve"><value>Doses:</value></data>
+  <data name="MedForm_NameRequired" xml:space="preserve"><value>Name must not be empty.</value></data>
+  <data name="MedForm_IntakeRequired" xml:space="preserve"><value>At least one intake time required.</value></data>
+
+  <!-- Chart -->
+  <data name="Chart_Title" xml:space="preserve"><value>History</value></data>
+  <data name="Chart_Header" xml:space="preserve"><value>Mood history</value></data>
+  <data name="Chart_Days30" xml:space="preserve"><value>30 days</value></data>
+  <data name="Chart_Days60" xml:space="preserve"><value>60 days</value></data>
+  <data name="Chart_Days90" xml:space="preserve"><value>90 days</value></data>
+  <data name="Chart_Empty" xml:space="preserve"><value>No entries in selected period.</value></data>
+  <data name="Chart_Hypomania" xml:space="preserve"><value>Hypomania</value></data>
+  <data name="Chart_ExportPdf" xml:space="preserve"><value>Export PDF</value></data>
+  <data name="Chart_ExportPdfAlt" xml:space="preserve"><value>Export as PDF</value></data>
+  <data name="Chart_PdfExported" xml:space="preserve"><value>PDF exported</value></data>
+  <data name="Chart_PdfSavedFmt" xml:space="preserve"><value>Saved at:{0}{1}</value></data>
+  <data name="Chart_OpenFile" xml:space="preserve"><value>Open file</value></data>
+
+  <!-- Settings -->
+  <data name="Settings_Title" xml:space="preserve"><value>Settings</value></data>
+  <data name="Settings_Backup" xml:space="preserve"><value>Backup</value></data>
+  <data name="Settings_CloudProvider" xml:space="preserve"><value>Cloud provider</value></data>
+  <data name="Settings_NextcloudUrl" xml:space="preserve"><value>Nextcloud URL</value></data>
+  <data name="Settings_AutoBackup" xml:space="preserve"><value>Automatic backup (daily)</value></data>
+  <data name="Settings_BackupWarningPrefix" xml:space="preserve"><value>Warning after</value></data>
+  <data name="Settings_BackupWarningSuffix" xml:space="preserve"><value>days without backup (0 = off)</value></data>
+  <data name="Settings_Reminders" xml:space="preserve"><value>Reminders</value></data>
+  <data name="Settings_EveningReminder" xml:space="preserve"><value>Evening reminder for daily entry</value></data>
+  <data name="Settings_EveningReminderEnable" xml:space="preserve"><value>Enable evening reminder</value></data>
+  <data name="Settings_CrisisHint" xml:space="preserve"><value>Crisis hint at very low values</value></data>
+  <data name="Settings_Display" xml:space="preserve"><value>Display</value></data>
+  <data name="Settings_InputMode" xml:space="preserve"><value>Input mode</value></data>
+  <data name="Settings_ColorBlind" xml:space="preserve"><value>Color blind mode (Wong palette)</value></data>
+  <data name="Settings_App" xml:space="preserve"><value>App</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Language</value></data>
+  <data name="Settings_Biometrics" xml:space="preserve"><value>Biometrics (fingerprint)</value></data>
+  <data name="Settings_SaveButton" xml:space="preserve"><value>Save settings</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Settings saved.</value></data>
+  <data name="Settings_NoBackup" xml:space="preserve"><value>No backup</value></data>
+  <data name="Settings_LocalExport" xml:space="preserve"><value>Local export</value></data>
+  <data name="Settings_InputQuick" xml:space="preserve"><value>Quick (2 sliders)</value></data>
+  <data name="Settings_InputFull" xml:space="preserve"><value>Full</value></data>
+  <data name="Settings_InputAlwaysAsk" xml:space="preserve"><value>Always ask</value></data>
+  <data name="Settings_LangSystem" xml:space="preserve"><value>System language</value></data>
+  <data name="Settings_LangGerman" xml:space="preserve"><value>German</value></data>
+  <data name="Settings_LangEnglish" xml:space="preserve"><value>English</value></data>
+
+  <!-- Crisis -->
+  <data name="Crisis_Title" xml:space="preserve"><value>Help in Crisis</value></data>
+  <data name="Crisis_NotAlone" xml:space="preserve"><value>You don't have to go through this alone.</value></data>
+  <data name="Crisis_Region" xml:space="preserve"><value>Region:</value></data>
+  <data name="Crisis_Empty" xml:space="preserve"><value>No entries found for this region.</value></data>
+  <data name="Crisis_Available24h" xml:space="preserve"><value>Free · 24/7</value></data>
+  <data name="Crisis_Call" xml:space="preserve"><value>Call now</value></data>
+  <data name="Crisis_Website" xml:space="preserve"><value>Open website</value></data>
+  <data name="Crisis_LoadErrorFmt" xml:space="preserve"><value>Error loading: {0}</value></data>
+
+  <!-- Onboarding -->
+  <data name="Onboarding_Title" xml:space="preserve"><value>Welcome</value></data>
+  <data name="Onboarding_Welcome" xml:space="preserve"><value>Welcome to LifeChart</value></data>
+  <data name="Onboarding_Subtitle" xml:space="preserve"><value>Developed by an affected person, for affected people.</value></data>
+  <data name="Onboarding_DisclaimerTitle" xml:space="preserve"><value>Notice</value></data>
+  <data name="Onboarding_Disclaimer" xml:space="preserve"><value>LifeChart is a personal diary for self-observation. It does not replace psychiatric treatment and is not a medical device. The progress report is a personal memory aid — not a clinical document.</value></data>
+  <data name="Onboarding_CrisisHotline" xml:space="preserve"><value>In a crisis: Crisis hotline 0800 111 0 111 (free, 24/7)</value></data>
+  <data name="Onboarding_ReminderQuestion" xml:space="preserve"><value>When would you like to be reminded in the evening?</value></data>
+  <data name="Onboarding_ReminderEnable" xml:space="preserve"><value>Enable evening reminder</value></data>
+  <data name="Onboarding_ReminderNote" xml:space="preserve"><value>Note: Reminders are not yet active on this experimental Linux build.</value></data>
+  <data name="Onboarding_Start" xml:space="preserve"><value>Let's go</value></data>
+
+  <!-- About -->
+  <data name="About_Title" xml:space="preserve"><value>About</value></data>
+  <data name="About_Version" xml:space="preserve"><value>Version 1.0.0 — Experimental Linux build</value></data>
+  <data name="About_Description" xml:space="preserve"><value>A mood and wellness tracker for people with bipolar disorder, based on the NIMH Life Chart methodology.</value></data>
+  <data name="About_Developer" xml:space="preserve"><value>Developer</value></data>
+  <data name="About_License" xml:space="preserve"><value>License</value></data>
+  <data name="About_Copyright" xml:space="preserve"><value>Copyright</value></data>
+  <data name="About_Wiki" xml:space="preserve"><value>Wiki &amp; Documentation</value></data>
+  <data name="About_Issues" xml:space="preserve"><value>Report bugs / Submit ideas</value></data>
+  <data name="About_ExperimentalNote" xml:space="preserve"><value>Note: This Linux build is experimental. For production use, please use the GNOME LifeChart (Vala) app.</value></data>
+
+  <!-- Lock -->
+  <data name="Lock_AuthPrompt" xml:space="preserve"><value>Please confirm your identity.</value></data>
+  <data name="Lock_Retry" xml:space="preserve"><value>Try again</value></data>
+
+  <!-- Alarm -->
+  <data name="Alarm_MedicationFmt" xml:space="preserve"><value>Time for {0} ({1}) — {2}x</value></data>
+  <data name="Alarm_Evening" xml:space="preserve"><value>Time for your daily entry</value></data>
+</root>

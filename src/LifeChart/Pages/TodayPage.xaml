@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LifeChart.ViewModels"
+             xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
+             x:Class="LifeChart.Pages.TodayPage"
+             Title="{x:Static loc:L.Today_Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+
+            <Label Text="{x:Static loc:L.Today_HowAreYou}"
+                   FontSize="20" FontAttributes="Bold" />
+
+            <Label Text="{x:Static loc:L.Today_Mood}" />
+            <Slider x:Name="MoodSlider"
+                    Minimum="-5" Maximum="5"
+                    Value="{Binding MoodValue}"
+                    ThumbColor="#0072B2" />
+            <Label Text="{Binding MoodValue}"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="{x:Static loc:L.Today_Functionality}" />
+            <Slider x:Name="FuncSlider"
+                    Minimum="-5" Maximum="5"
+                    Value="{Binding FunctionalityValue}"
+                    ThumbColor="#E69F00" />
+            <Label Text="{Binding FunctionalityValue}"
+                   HorizontalTextAlignment="Center" />
+
+            <Button Text="{x:Static loc:L.Today_More}"
+                    Command="{Binding ToggleFullEntryCommand}"
+                    IsVisible="{Binding ShowFullEntry, Converter={StaticResource InvertedBoolConverter}}" />
+
+            <VerticalStackLayout IsVisible="{Binding ShowFullEntry}" Spacing="12">
+
+                <Label Text="{x:Static loc:L.Today_Sleep}" />
+                <Stepper Minimum="0" Maximum="24"
+                         Value="{Binding SleepHours}" />
+                <Label Text="{Binding SleepHours, StringFormat='{0} h'}"
+                       HorizontalTextAlignment="Center" />
+
+                <HorizontalStackLayout Spacing="8">
+                    <CheckBox IsChecked="{Binding MedicationTaken}" />
+                    <Label Text="{x:Static loc:L.Today_MedicationTaken}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="8">
+                    <CheckBox IsChecked="{Binding MenstrualCycle}" />
+                    <Label Text="{x:Static loc:L.Today_MenstrualCycle}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Label Text="{x:Static loc:L.Today_SymptomsPlaceholder}" />
+                <Editor Placeholder="..."
+                        Text="{Binding Symptoms}"
+                        AutoSize="TextChanges"
+                        MaxLength="1000" />
+
+                <Label Text="{x:Static loc:L.Today_NotesPlaceholder}" />
+                <Editor Placeholder="..."
+                        Text="{Binding Notes}"
+                        AutoSize="TextChanges"
+                        MaxLength="2000" />
+
+                <HorizontalStackLayout Spacing="8">
+                    <CheckBox IsChecked="{Binding IsHypomanic}" />
+                    <Label Text="{x:Static loc:L.Today_Hypomania}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Button Text="{x:Static loc:L.Common_Save}"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#0072B2"
+                    TextColor="White" />
+
+            <Label Text="{x:Static loc:L.Today_AlreadySaved}"
+                   IsVisible="{Binding EntryAlreadySaved}"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

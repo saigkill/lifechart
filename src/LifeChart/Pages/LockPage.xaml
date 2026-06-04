@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Pages.LockPage"
+             xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Background}">
+
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Spacing="24"
+        Padding="40">
+
+        <Label Text="LifeChart"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="{StaticResource Primary}" />
+
+        <Label Text="{x:Static loc:L.Lock_AuthPrompt}"
+               FontSize="15"
+               HorizontalTextAlignment="Center"
+               TextColor="{StaticResource TextSecondary}" />
+
+        <ActivityIndicator
+            IsRunning="{Binding IsAuthenticating}"
+            IsVisible="{Binding IsAuthenticating}"
+            Color="{StaticResource Primary}" />
+
+        <Label Text="{Binding ErrorMessage}"
+               IsVisible="{Binding ErrorMessage, Converter={StaticResource IsNotNullConverter}}"
+               TextColor="{StaticResource Danger}"
+               HorizontalTextAlignment="Center"
+               FontSize="13" />
+
+        <Button Text="{x:Static loc:L.Lock_Retry}"
+                Command="{Binding RetryCommand}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsNotNullConverter}}"
+                Style="{StaticResource PrimaryButtonStyle}" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
