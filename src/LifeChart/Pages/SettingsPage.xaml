@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:settings="clr-namespace:LifeChart.Application.Settings;assembly=LifeChart.Application"
+             xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
+             x:Class="LifeChart.Pages.SettingsPage"
+             Title="{x:Static loc:L.Settings_Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="20">
+
+            <!-- Backup -->
+            <Label Text="{x:Static loc:L.Settings_Backup}" FontAttributes="Bold" FontSize="16" />
+
+            <Picker Title="{x:Static loc:L.Settings_CloudProvider}"
+                    ItemsSource="{Binding CloudProviders}"
+                    SelectedItem="{Binding BackupProvider}" />
+
+            <VerticalStackLayout IsVisible="{Binding BackupProvider,
+                Converter={StaticResource IsNextcloudConverter}}" Spacing="8">
+                <Label Text="{x:Static loc:L.Settings_NextcloudUrl}" />
+                <Entry Placeholder="https://cloud.example.com"
+                       Text="{Binding NextcloudUrl}"
+                       Keyboard="Url" />
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding AutoBackupEnabled}" />
+                <Label Text="{x:Static loc:L.Settings_AutoBackup}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="{x:Static loc:L.Settings_BackupWarningPrefix}" VerticalOptions="Center" />
+                <Entry Text="{Binding BackupWarningThresholdDays}"
+                       Keyboard="Numeric" WidthRequest="60" />
+                <Label Text="{x:Static loc:L.Settings_BackupWarningSuffix}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <!-- Erinnerungen -->
+            <Label Text="{x:Static loc:L.Settings_Reminders}" FontAttributes="Bold" FontSize="16" />
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding EveningReminderEnabled}" />
+                <Label Text="{x:Static loc:L.Settings_EveningReminder}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8"
+                IsVisible="{Binding EveningReminderEnabled}">
+                <Label Text="{x:Static loc:L.Common_Time}" VerticalOptions="Center" />
+                <TimePicker Time="{Binding EveningReminderTime}" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding CrisisHintEnabled}" />
+                <Label Text="{x:Static loc:L.Settings_CrisisHint}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <!-- UX -->
+            <Label Text="{x:Static loc:L.Settings_Display}" FontAttributes="Bold" FontSize="16" />
+
+            <Picker Title="{x:Static loc:L.Settings_InputMode}"
+                    ItemsSource="{Binding InputModes}"
+                    SelectedItem="{Binding InputMode}" />
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding ColorBlindModeEnabled}" />
+                <Label Text="{x:Static loc:L.Settings_ColorBlind}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <!-- App -->
+            <Label Text="{x:Static loc:L.Settings_App}" FontAttributes="Bold" FontSize="16" />
+
+            <HorizontalStackLayout Spacing="8">
+                <Switch IsToggled="{Binding BiometricsEnabled}" />
+                <Label Text="{x:Static loc:L.Settings_Biometrics}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Picker Title="{x:Static loc:L.Settings_Language}"
+                    ItemsSource="{Binding Languages}"
+                    SelectedItem="{Binding Language}" />
+
+            <Button Text="{x:Static loc:L.Settings_SaveButton}"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#0072B2"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

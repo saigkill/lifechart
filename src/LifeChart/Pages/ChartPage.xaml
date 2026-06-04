@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
+             x:Class="LifeChart.Pages.ChartPage"
+             Title="{x:Static loc:L.Chart_Title}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="16" RowSpacing="12">
+
+        <!-- Zeitraum-Auswahl -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="8" HorizontalOptions="Center">
+            <Button Text="{x:Static loc:L.Chart_Days30}"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="30" />
+            <Button Text="{x:Static loc:L.Chart_Days60}"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="60" />
+            <Button Text="{x:Static loc:L.Chart_Days90}"
+                    Command="{Binding ChangePeriodCommand}"
+                    CommandParameter="90" />
+        </HorizontalStackLayout>
+
+        <!-- Chart Platzhalter — wird durch LiveCharts2 ersetzt -->
+        <BoxView Grid.Row="1"
+                 BackgroundColor="#F5F5F5"
+                 CornerRadius="8" />
+
+        <!-- Legende -->
+        <HorizontalStackLayout Grid.Row="1"
+                               HorizontalOptions="Start"
+                               VerticalOptions="End"
+                               Margin="8" Spacing="16">
+            <HorizontalStackLayout Spacing="4">
+                <BoxView Color="#0072B2" WidthRequest="24" HeightRequest="4"
+                         VerticalOptions="Center" />
+                <Label Text="{x:Static loc:L.Today_Mood}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="4">
+                <BoxView Color="#E69F00" WidthRequest="24" HeightRequest="4"
+                         VerticalOptions="Center" />
+                <Label Text="{x:Static loc:L.Today_Functionality}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <!-- PDF Export -->
+        <Button Grid.Row="2"
+                Text="{x:Static loc:L.Chart_ExportPdfAlt}"
+                Command="{Binding ExportPdfCommand}"
+                IsEnabled="{Binding IsExporting, Converter={StaticResource InvertedBoolConverter}}" />
+
+    </Grid>
+
+</ContentPage>

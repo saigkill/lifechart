@@ -18,10 +18,10 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore
-        run: dotnet restore LifeChart.Tests/LifeChart.Tests.csproj
+        run: dotnet restore src/LifeChart.Tests/LifeChart.Tests.csproj
 
       - name: Test
-        run: dotnet test LifeChart.Tests/LifeChart.Tests.csproj --no-restore
+        run: dotnet test src/LifeChart.Tests/LifeChart.Tests.csproj --no-restore
 
   android:
     runs-on: ubuntu-latest
@@ -42,24 +42,24 @@ jobs:
 
       - name: Build Play Store APK
         run: |
-          dotnet publish LifeChart/LifeChart.csproj \
+          dotnet publish src/LifeChart/LifeChart.csproj \
             -f net10.0-android \
             -c Release \
             /p:DefineConstants="GOOGLE_SERVICES" \
             /p:AndroidKeyStore=true \
-            /p:AndroidSigningKeyStore=../lifechart.keystore \
+            /p:AndroidSigningKeyStore=../../lifechart.keystore \
             /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
             /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
             /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
 
       - name: Build F-Droid APK
         run: |
-          dotnet publish LifeChart/LifeChart.csproj \
+          dotnet publish src/LifeChart/LifeChart.csproj \
             -f net10.0-android \
             -c Release \
             /p:DefineConstants="FDROID" \
             /p:AndroidKeyStore=true \
-            /p:AndroidSigningKeyStore=../lifechart.keystore \
+            /p:AndroidSigningKeyStore=../../lifechart.keystore \
             /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
             /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
             /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
@@ -86,7 +86,7 @@ jobs:
 
       - name: Build Windows
         run: |
-          dotnet publish LifeChart/LifeChart.csproj `
+          dotnet publish src/LifeChart/LifeChart.csproj `
             -f net10.0-windows10.0.19041.0 `
             -c Release
 

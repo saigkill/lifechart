@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+
+  <!-- Common -->
+  <data name="Common_Save" xml:space="preserve"><value>Speichern</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Abbrechen</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Löschen</value></data>
+  <data name="Common_Edit" xml:space="preserve"><value>Bearbeiten</value></data>
+  <data name="Common_Error" xml:space="preserve"><value>Fehler</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Name" xml:space="preserve"><value>Name</value></data>
+  <data name="Common_Password" xml:space="preserve"><value>Passwort</value></data>
+  <data name="Common_Username" xml:space="preserve"><value>Benutzername</value></data>
+  <data name="Common_Time" xml:space="preserve"><value>Uhrzeit:</value></data>
+  <data name="Common_ErrorFmt" xml:space="preserve"><value>Fehler: {0}</value></data>
+
+  <!-- Today -->
+  <data name="Today_Title" xml:space="preserve"><value>Heute</value></data>
+  <data name="Today_EntryFor" xml:space="preserve"><value>Eintrag für {0}</value></data>
+  <data name="Today_HowAreYou" xml:space="preserve"><value>Wie geht es dir heute?</value></data>
+  <data name="Today_Mood" xml:space="preserve"><value>Stimmung</value></data>
+  <data name="Today_Functionality" xml:space="preserve"><value>Funktionsfähigkeit</value></data>
+  <data name="Today_Sleep" xml:space="preserve"><value>Schlaf (Stunden)</value></data>
+  <data name="Today_SleepValue" xml:space="preserve"><value>{0} h</value></data>
+  <data name="Today_MedicationTaken" xml:space="preserve"><value>Medikamente genommen</value></data>
+  <data name="Today_MenstrualCycle" xml:space="preserve"><value>Menstruationszyklus</value></data>
+  <data name="Today_Hypomania" xml:space="preserve"><value>Hypomanie / Gemischte Episode</value></data>
+  <data name="Today_Symptoms" xml:space="preserve"><value>Symptome</value></data>
+  <data name="Today_SymptomsPlaceholder" xml:space="preserve"><value>Symptome (optional)</value></data>
+  <data name="Today_Notes" xml:space="preserve"><value>Notizen</value></data>
+  <data name="Today_NotesPlaceholder" xml:space="preserve"><value>Notizen (optional)</value></data>
+  <data name="Today_More" xml:space="preserve"><value>Mehr...</value></data>
+  <data name="Today_Saved" xml:space="preserve"><value>Eintrag gespeichert.</value></data>
+  <data name="Today_AlreadySaved" xml:space="preserve"><value>Eintrag heute bereits gespeichert.</value></data>
+  <data name="Today_CriticalValues" xml:space="preserve"><value>Gespeichert. Achtung: kritische Werte erkannt.</value></data>
+  <data name="Today_ShowCrisisResources" xml:space="preserve"><value>Krisenressourcen anzeigen</value></data>
+  <data name="Today_InputModeTitle" xml:space="preserve"><value>Eingabemodus wählen</value></data>
+  <data name="Today_InputModeQuick" xml:space="preserve"><value>Schnell (Stimmung + Funktionsfähigkeit)</value></data>
+  <data name="Today_InputModeFull" xml:space="preserve"><value>Vollständig (alle Felder)</value></data>
+
+  <!-- Medications -->
+  <data name="Medications_Title" xml:space="preserve"><value>Medikamente</value></data>
+  <data name="Medications_ActiveList" xml:space="preserve"><value>Aktive Medikamente</value></data>
+  <data name="Medications_Empty" xml:space="preserve"><value>Keine Medikamente eingetragen.</value></data>
+  <data name="Medications_AddNew" xml:space="preserve"><value>+ Neu</value></data>
+  <data name="Medications_AddTitle" xml:space="preserve"><value>Medikament hinzufügen</value></data>
+  <data name="Medications_StockFmt" xml:space="preserve"><value>Bestand: {0} (Min: {1})</value></data>
+  <data name="Medications_IntakeFmt" xml:space="preserve"><value>Einnahme: {0}</value></data>
+  <data name="Medications_DeleteTitle" xml:space="preserve"><value>Medikament löschen</value></data>
+  <data name="Medications_DeleteConfirmFmt" xml:space="preserve"><value>'{0}' wirklich löschen?</value></data>
+
+  <!-- Medication Form -->
+  <data name="MedForm_TitleAdd" xml:space="preserve"><value>Medikament anlegen</value></data>
+  <data name="MedForm_TitleEdit" xml:space="preserve"><value>Medikament bearbeiten</value></data>
+  <data name="MedForm_Dosage" xml:space="preserve"><value>Dosierung</value></data>
+  <data name="MedForm_DosagePlaceholder" xml:space="preserve"><value>z.B. 400mg</value></data>
+  <data name="MedForm_NamePlaceholder" xml:space="preserve"><value>z.B. Lithium</value></data>
+  <data name="MedForm_MinStock" xml:space="preserve"><value>Mindestbestand</value></data>
+  <data name="MedForm_CurrentStock" xml:space="preserve"><value>Aktueller Bestand</value></data>
+  <data name="MedForm_IntakeTimes" xml:space="preserve"><value>Einnahmezeiten</value></data>
+  <data name="MedForm_AddTime" xml:space="preserve"><value>+ Einnahmezeit</value></data>
+  <data name="MedForm_Doses" xml:space="preserve"><value>Dosen:</value></data>
+  <data name="MedForm_NameRequired" xml:space="preserve"><value>Name darf nicht leer sein.</value></data>
+  <data name="MedForm_IntakeRequired" xml:space="preserve"><value>Mindestens eine Einnahmezeit angeben.</value></data>
+
+  <!-- Chart -->
+  <data name="Chart_Title" xml:space="preserve"><value>Verlauf</value></data>
+  <data name="Chart_Header" xml:space="preserve"><value>Stimmungsverlauf</value></data>
+  <data name="Chart_Days30" xml:space="preserve"><value>30 Tage</value></data>
+  <data name="Chart_Days60" xml:space="preserve"><value>60 Tage</value></data>
+  <data name="Chart_Days90" xml:space="preserve"><value>90 Tage</value></data>
+  <data name="Chart_Empty" xml:space="preserve"><value>Noch keine Einträge im gewählten Zeitraum.</value></data>
+  <data name="Chart_Hypomania" xml:space="preserve"><value>Hypomanie</value></data>
+  <data name="Chart_ExportPdf" xml:space="preserve"><value>PDF exportieren</value></data>
+  <data name="Chart_ExportPdfAlt" xml:space="preserve"><value>Als PDF exportieren</value></data>
+  <data name="Chart_PdfExported" xml:space="preserve"><value>PDF exportiert</value></data>
+  <data name="Chart_PdfSavedFmt" xml:space="preserve"><value>Gespeichert unter:{0}{1}</value></data>
+  <data name="Chart_OpenFile" xml:space="preserve"><value>Datei öffnen</value></data>
+
+  <!-- Settings -->
+  <data name="Settings_Title" xml:space="preserve"><value>Einstellungen</value></data>
+  <data name="Settings_Backup" xml:space="preserve"><value>Backup</value></data>
+  <data name="Settings_CloudProvider" xml:space="preserve"><value>Cloud-Anbieter</value></data>
+  <data name="Settings_NextcloudUrl" xml:space="preserve"><value>Nextcloud-URL</value></data>
+  <data name="Settings_AutoBackup" xml:space="preserve"><value>Automatisches Backup (täglich)</value></data>
+  <data name="Settings_BackupWarningPrefix" xml:space="preserve"><value>Warnung nach</value></data>
+  <data name="Settings_BackupWarningSuffix" xml:space="preserve"><value>Tagen ohne Backup (0 = aus)</value></data>
+  <data name="Settings_Reminders" xml:space="preserve"><value>Erinnerungen</value></data>
+  <data name="Settings_EveningReminder" xml:space="preserve"><value>Abend-Erinnerung für Tageseintrag</value></data>
+  <data name="Settings_EveningReminderEnable" xml:space="preserve"><value>Abend-Erinnerung aktivieren</value></data>
+  <data name="Settings_CrisisHint" xml:space="preserve"><value>Krisenhinweis bei sehr niedrigen Werten</value></data>
+  <data name="Settings_Display" xml:space="preserve"><value>Darstellung</value></data>
+  <data name="Settings_InputMode" xml:space="preserve"><value>Eingabemodus</value></data>
+  <data name="Settings_ColorBlind" xml:space="preserve"><value>Farbenblind-Modus (Wong-Palette)</value></data>
+  <data name="Settings_App" xml:space="preserve"><value>App</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Sprache</value></data>
+  <data name="Settings_Biometrics" xml:space="preserve"><value>Biometrie (Fingerabdruck)</value></data>
+  <data name="Settings_SaveButton" xml:space="preserve"><value>Einstellungen speichern</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Einstellungen gespeichert.</value></data>
+  <data name="Settings_NoBackup" xml:space="preserve"><value>Kein Backup</value></data>
+  <data name="Settings_LocalExport" xml:space="preserve"><value>Lokaler Export</value></data>
+  <data name="Settings_InputQuick" xml:space="preserve"><value>Schnell (2 Slider)</value></data>
+  <data name="Settings_InputFull" xml:space="preserve"><value>Vollständig</value></data>
+  <data name="Settings_InputAlwaysAsk" xml:space="preserve"><value>Immer fragen</value></data>
+  <data name="Settings_LangSystem" xml:space="preserve"><value>Systemsprache</value></data>
+  <data name="Settings_LangGerman" xml:space="preserve"><value>Deutsch</value></data>
+  <data name="Settings_LangEnglish" xml:space="preserve"><value>English</value></data>
+
+  <!-- Crisis -->
+  <data name="Crisis_Title" xml:space="preserve"><value>Hilfe in der Krise</value></data>
+  <data name="Crisis_NotAlone" xml:space="preserve"><value>Du musst das nicht alleine durchstehen.</value></data>
+  <data name="Crisis_Region" xml:space="preserve"><value>Region:</value></data>
+  <data name="Crisis_Empty" xml:space="preserve"><value>Keine Einträge für diese Region gefunden.</value></data>
+  <data name="Crisis_Available24h" xml:space="preserve"><value>Kostenlos · 24/7</value></data>
+  <data name="Crisis_Call" xml:space="preserve"><value>Jetzt anrufen</value></data>
+  <data name="Crisis_Website" xml:space="preserve"><value>Website öffnen</value></data>
+  <data name="Crisis_LoadErrorFmt" xml:space="preserve"><value>Fehler beim Laden: {0}</value></data>
+
+  <!-- Onboarding -->
+  <data name="Onboarding_Title" xml:space="preserve"><value>Willkommen</value></data>
+  <data name="Onboarding_Welcome" xml:space="preserve"><value>Willkommen bei LifeChart</value></data>
+  <data name="Onboarding_Subtitle" xml:space="preserve"><value>Entwickelt von einem Betroffenen, für Betroffene.</value></data>
+  <data name="Onboarding_DisclaimerTitle" xml:space="preserve"><value>Hinweis</value></data>
+  <data name="Onboarding_Disclaimer" xml:space="preserve"><value>LifeChart ist ein persönliches Tagebuch zur Selbstbeobachtung. Es ersetzt keine psychiatrische Behandlung und ist kein Medizinprodukt. Der Verlaufsbericht ist eine persönliche Gedächtnisstütze — kein klinisches Dokument.</value></data>
+  <data name="Onboarding_CrisisHotline" xml:space="preserve"><value>In einer Krise: Telefonseelsorge 0800 111 0 111 (kostenlos, 24/7)</value></data>
+  <data name="Onboarding_ReminderQuestion" xml:space="preserve"><value>Wann möchtest du abends erinnert werden?</value></data>
+  <data name="Onboarding_ReminderEnable" xml:space="preserve"><value>Abend-Erinnerung aktivieren</value></data>
+  <data name="Onboarding_ReminderNote" xml:space="preserve"><value>Hinweis: Erinnerungen sind auf diesem experimentellen Linux-Build noch nicht aktiv.</value></data>
+  <data name="Onboarding_Start" xml:space="preserve"><value>Los geht's</value></data>
+
+  <!-- About -->
+  <data name="About_Title" xml:space="preserve"><value>Über</value></data>
+  <data name="About_Version" xml:space="preserve"><value>Version 1.0.0 — Experimenteller Linux-Build</value></data>
+  <data name="About_Description" xml:space="preserve"><value>Ein Stimmungs- und Wellness-Tracker für Menschen mit bipolarer Störung, basierend auf der NIMH Life Chart Methodik.</value></data>
+  <data name="About_Developer" xml:space="preserve"><value>Entwickler</value></data>
+  <data name="About_License" xml:space="preserve"><value>Lizenz</value></data>
+  <data name="About_Copyright" xml:space="preserve"><value>Copyright</value></data>
+  <data name="About_Wiki" xml:space="preserve"><value>Wiki &amp; Dokumentation</value></data>
+  <data name="About_Issues" xml:space="preserve"><value>Fehler melden / Ideen einreichen</value></data>
+  <data name="About_ExperimentalNote" xml:space="preserve"><value>Hinweis: Dieser Linux-Build ist experimentell. Für Produktiveinsatz bitte die GNOME LifeChart (Vala) App verwenden.</value></data>
+
+  <!-- Lock -->
+  <data name="Lock_AuthPrompt" xml:space="preserve"><value>Bitte Identität bestätigen.</value></data>
+  <data name="Lock_Retry" xml:space="preserve"><value>Erneut versuchen</value></data>
+
+  <!-- Alarm -->
+  <data name="Alarm_MedicationFmt" xml:space="preserve"><value>Zeit für {0} ({1}) — {2}x</value></data>
+  <data name="Alarm_Evening" xml:space="preserve"><value>Zeit für deinen Tageseintrag</value></data>
+</root>
