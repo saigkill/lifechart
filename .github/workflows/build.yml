@@ -32,7 +32,7 @@ jobs:
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
       - name: BuilddirProps
-        run: less ${{ env.DIRECTORYPROPS }} > src/Directory.Build.props.user
+        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install MAUI workload
         run: dotnet workload install maui-tizen
       - name: Restore
@@ -81,7 +81,7 @@ jobs:
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
       - name: BuilddirProps
-        run: less ${{ env.DIRECTORYPROPS }} > src/Directory.Build.props.user
+        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install MAUI workload
         run: dotnet workload install maui-android
       - name: Decode keystore
@@ -133,7 +133,7 @@ jobs:
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
       - name: BuilddirProps
-        run: less ${{ env.DIRECTORYPROPS }} > src/Directory.Build.props.user
+        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install MAUI workload
         run: dotnet workload install maui-windows
       - name: Build Windows
@@ -174,7 +174,7 @@ jobs:
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
       - name: BuilddirProps
-        run: less ${{ env.DIRECTORYPROPS }} > src/Directory.Build.props.user
+        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install GTK4 runtime libraries
         run: |
           sudo apt-get update -qq
