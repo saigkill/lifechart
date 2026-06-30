@@ -10,7 +10,6 @@ public class PluginFingerprintBiometricService : IBiometricService
         "LifeChart entsperren",
         "Identität mit Biometrie bestätigen")
     {
-        UseDialog = true,
         ConfirmationRequired = false,
         FallbackTitle = "PIN verwenden"
     };

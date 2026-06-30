@@ -1,4 +1,5 @@
 using LifeChart.ViewModels;
+using MauiApplication = Microsoft.Maui.Controls.Application;
 
 namespace LifeChart.Pages;
 
@@ -23,7 +24,7 @@ public partial class TodayPage : ContentPage
 
     private async void OnCrisisHintRequested(object? sender, EventArgs e)
     {
-        var settings = ((App)Application.Current!).Settings;
+        var settings = ((App)MauiApplication.Current!).Settings;
         if (!settings.CrisisHintEnabled) return;
 
         bool navigateToCrisis = await DisplayAlert(
