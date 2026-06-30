@@ -1,4 +1,5 @@
 using LifeChart.ViewModels;
+using MauiApplication = Microsoft.Maui.Controls.Application;
 
 namespace LifeChart.Pages;
 
@@ -11,7 +12,7 @@ public partial class LockPage : ContentPage
 
         viewModel.AuthenticationSucceeded += (_, _) =>
         {
-            Application.Current!.MainPage = IPlatformApplication.Current!
+            MauiApplication.Current!.MainPage = IPlatformApplication.Current!
                 .Services.GetRequiredService<AppShell>();
         };
     }

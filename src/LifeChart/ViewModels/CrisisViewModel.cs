@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using LifeChart.Application.DTOs;
 using LifeChart.Application.UseCases.Crisis;
 using System.Collections.ObjectModel;
+using System.Globalization;
 
 namespace LifeChart.ViewModels;
 

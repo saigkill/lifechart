@@ -1,4 +1,5 @@
 using LifeChart.ViewModels;
+using MauiApplication = Microsoft.Maui.Controls.Application;
 
 namespace LifeChart.Pages;
 
@@ -11,7 +12,7 @@ public partial class OnboardingPage : ContentPage
 
         viewModel.OnboardingCompleted += async (_, _) =>
         {
-            Application.Current!.MainPage = new AppShell();
+            MauiApplication.Current!.MainPage = new AppShell();
         };
     }
 }
