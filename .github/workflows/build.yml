@@ -63,6 +63,9 @@ jobs:
         with:
            name: coverage-report
            path: ./TestResults/CoverageReport
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
 
   android:
     runs-on: ubuntu-latest
