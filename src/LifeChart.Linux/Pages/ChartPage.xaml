@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.ChartPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="12" Padding="16">
+
+            <HorizontalStackLayout>
+                <Label x:Name="HeaderLabel"
+                       FontSize="18" FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="PdfButton"
+                        BackgroundColor="#0072B2" TextColor="White"
+                        Padding="12,6"
+                        HorizontalOptions="End"
+                        Clicked="OnExportPdfClicked"/>
+            </HorizontalStackLayout>
+
+            <!-- Range selector buttons — built in code-behind to support active-state highlighting -->
+            <HorizontalStackLayout x:Name="RangeButtonRow" Spacing="8"/>
+
+            <GraphicsView x:Name="ChartView" HeightRequest="300"/>
+
+            <Label x:Name="EmptyLabel"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"
+                   IsVisible="False"/>
+
+            <!-- Legend -->
+            <HorizontalStackLayout Spacing="24" HorizontalOptions="Center">
+                <!-- Mood -->
+                <HorizontalStackLayout Spacing="6">
+                    <BoxView Color="#0072B2" WidthRequest="24" HeightRequest="4"
+                             VerticalOptions="Center"/>
+                    <Label x:Name="MoodLegendLabel" FontSize="13"/>
+                </HorizontalStackLayout>
+                <!-- Functionality -->
+                <HorizontalStackLayout Spacing="6">
+                    <BoxView Color="#E69F00" WidthRequest="24" HeightRequest="4"
+                             VerticalOptions="Center"/>
+                    <Label x:Name="FuncLegendLabel" FontSize="13"/>
+                </HorizontalStackLayout>
+                <!-- Hypomania -->
+                <HorizontalStackLayout Spacing="6">
+                    <BoxView Color="#CC79A7" WidthRequest="24" HeightRequest="4"
+                             VerticalOptions="Center"/>
+                    <Label x:Name="HypomaniaLegendLabel" FontSize="13"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

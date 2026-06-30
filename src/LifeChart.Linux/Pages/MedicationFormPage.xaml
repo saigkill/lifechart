@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.MedicationFormPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="12" Padding="24,16">
+
+            <!-- Name field -->
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="NameFieldLabel" FontSize="13"/>
+                <Entry x:Name="NameEntry"/>
+            </VerticalStackLayout>
+
+            <!-- Dosage field -->
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="DosageFieldLabel" FontSize="13"/>
+                <Entry x:Name="DosageEntry"/>
+            </VerticalStackLayout>
+
+            <!-- Min stock field -->
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="MinStockFieldLabel" FontSize="13"/>
+                <Entry x:Name="MinStockEntry" Placeholder="0" Keyboard="Numeric"/>
+            </VerticalStackLayout>
+
+            <!-- Current stock field -->
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="CurrentStockFieldLabel" FontSize="13"/>
+                <Entry x:Name="CurrentStockEntry" Placeholder="0" Keyboard="Numeric"/>
+            </VerticalStackLayout>
+
+            <Label x:Name="IntakeTimesLabel" FontSize="14" FontAttributes="Bold"/>
+
+            <!-- Intake time rows added dynamically from code-behind -->
+            <VerticalStackLayout x:Name="IntakeTimesLayout" Spacing="6"/>
+
+            <Button x:Name="AddTimeButton"
+                    HorizontalOptions="Start"
+                    Clicked="OnAddTimeClicked"/>
+
+            <BoxView HeightRequest="8"/>
+
+            <Button x:Name="SaveButton" HorizontalOptions="Center" Clicked="OnSaveClicked"/>
+
+            <Button x:Name="CancelButton"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Gray"
+                    Clicked="OnCancelClicked"/>
+
+            <Label x:Name="StatusLabel" HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

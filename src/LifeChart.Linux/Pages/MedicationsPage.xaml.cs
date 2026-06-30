@@ -7,56 +7,15 @@ using Microsoft.Maui.Graphics;
 
 namespace LifeChart.Linux.Pages;
 
-public class MedicationsPage : ContentPage
+public partial class MedicationsPage : ContentPage
 {
-    private readonly VerticalStackLayout _listLayout = new() { Spacing = 8 };
-    private readonly Label _emptyLabel = new()
-    {
-        HorizontalOptions = LayoutOptions.Center,
-        TextColor = Colors.Gray,
-        IsVisible = false,
-    };
-
     public MedicationsPage()
     {
+        InitializeComponent();
         Title = L.Medications_Title;
-        _emptyLabel.Text = L.Medications_Empty;
-
-        var addButton = new Button
-        {
-            Text = L.Medications_AddNew,
-            HorizontalOptions = LayoutOptions.End,
-        };
-        addButton.Clicked += async (_, _) =>
-            await Navigation.PushAsync(new MedicationFormPage());
-
-        Content = new ScrollView
-        {
-            Content = new VerticalStackLayout
-            {
-                Spacing = 16,
-                Padding = new Thickness(24, 16),
-                Children =
-                {
-                    new HorizontalStackLayout
-                    {
-                        Children =
-                        {
-                            new Label
-                            {
-                                Text = L.Medications_ActiveList,
-                                FontSize = 18,
-                                FontAttributes = FontAttributes.Bold,
-                                HorizontalOptions = LayoutOptions.FillAndExpand,
-                            },
-                            addButton,
-                        }
-                    },
-                    _emptyLabel,
-                    _listLayout,
-                }
-            }
-        };
+        ActiveListLabel.Text = L.Medications_ActiveList;
+        AddButton.Text = L.Medications_AddNew;
+        EmptyLabel.Text = L.Medications_Empty;
     }
 
     protected override async void OnAppearing()
@@ -65,18 +24,21 @@ public class MedicationsPage : ContentPage
         await LoadMedicationsAsync();
     }
 
+    private async void OnAddClicked(object? sender, EventArgs e)
+        => await Navigation.PushAsync(new MedicationFormPage());
+
     private async Task LoadMedicationsAsync()
     {
-        _listLayout.Children.Clear();
+        ListLayout.Children.Clear();
 
         var medications = (await IPlatformApplication.Current!.Services
             .GetRequiredService<GetActiveMedicationsUseCase>()
             .ExecuteAsync()).ToList();
 
-        _emptyLabel.IsVisible = medications.Count == 0;
+        EmptyLabel.IsVisible = medications.Count == 0;
 
         foreach (var med in medications)
-            _listLayout.Children.Add(BuildMedicationCard(med));
+            ListLayout.Children.Add(BuildMedicationCard(med));
     }
 
     private View BuildMedicationCard(MedicationDto med)

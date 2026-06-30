@@ -6,16 +6,23 @@
     <RootNamespace>LifeChart</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationId>org.gnome.lifechart.maui</ApplicationId>
+    <ApplicationId>org.github.saigkill.lifechart</ApplicationId>
     <ApplicationTitle>LifeChart (Experimentell)</ApplicationTitle>
     <DefineConstants>$(DefineConstants);EXPERIMENTAL</DefineConstants>
+    <UseMaui>true</UseMaui>
+    <UserSecretsId>126a0417-f4a8-4606-ac20-d61962afba9b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="6.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.41" />
     <PackageReference Include="Microsoft.Maui.Platforms.Linux.Gtk4" Version="0.1.0-*" />
     <PackageReference Include="Microsoft.Maui.Platforms.Linux.Gtk4.Essentials" Version="0.1.0-*" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />

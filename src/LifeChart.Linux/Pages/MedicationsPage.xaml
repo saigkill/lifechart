@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.MedicationsPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="24,16">
+
+            <HorizontalStackLayout>
+                <Label x:Name="ActiveListLabel"
+                       FontSize="18" FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="AddButton"
+                        HorizontalOptions="End"
+                        Clicked="OnAddClicked"/>
+            </HorizontalStackLayout>
+
+            <Label x:Name="EmptyLabel"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"
+                   IsVisible="False"/>
+
+            <VerticalStackLayout x:Name="ListLayout" Spacing="8"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

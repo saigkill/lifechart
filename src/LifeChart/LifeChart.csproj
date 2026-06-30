@@ -1,6 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net10.0-android;net10.0-windows10.0.19041.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>LifeChart</RootNamespace>
     <UseMaui>true</UseMaui>
@@ -19,14 +18,25 @@
     <!-- Windows -->
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="GitVersion.MsBuild" Version="6.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LifeChart.Application\LifeChart.Application.csproj" />
     <ProjectReference Include="..\LifeChart.Infrastructure\LifeChart.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Maui">
+      <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.maui.core\10.0.41\lib\net10.0\Microsoft.Maui.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

@@ -33,3 +33,4 @@ Thumbs.db
 *.keystore
 *.pfx
 local.settings.json
+/src/sixlabors.lic
