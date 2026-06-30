@@ -1,3 +1,14 @@
+| What                   | Status                                                                                                                                                               |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Continuous Integration | [![Build & Release](https://github.com/saigkill/lifechart/actions/workflows/build.yml/badge.svg)](https://github.com/saigkill/lifechart/actions/workflows/build.yml) |
+| Bugreports             | [![GitHub issues](https://img.shields.io/github/issues/saigkill/lifechart)](https://github.com/saigkill/lifechart/issues)                                            |
+| Blog                   | [![Blog](https://img.shields.io/badge/Blog-Saigkill-blue)](https://saschamanns.de)                                                                                   |
+| Downloads all          | ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/saigkill/lifechart/total)                                                     |
+| Docs                   | https://writebook.saschamanns.de/6/lifechart                                                                                                                         |
+| Build Report           | https://saigkill.github.io/lifechart/                                                                                                                                |
+
+File a bug report [on Github](https://github.com/saigkill/lifechart/issues).
+
 # LifeChart
 
 A mood and wellness tracker for people with bipolar disorder, based on the [NIMH Life Chart methodology](https://www.nimh.nih.gov/).
@@ -24,11 +35,11 @@ Germany: Telefonseelsorge **0800 111 0 111** (free, 24/7)
 
 ## Platforms
 
-| Platform | Status |
-|----------|--------|
-| Android  | Planned |
-| Windows  | Planned |
-| Linux    | See [GNOME LifeChart](https://gitlab.gnome.org/saigkill/gnome-lifechart) |
+| Platform | Status      |
+|----------|-------------|
+| Android  | Implemented |
+| Windows  | Implemented |
+| Linux    | Implemented |
 
 ## Architecture
 
@@ -39,6 +50,7 @@ LifeChart/              ← MAUI UI + ViewModels
 LifeChart.Domain/       ← Entities, Value Objects, Repository Interfaces
 LifeChart.Application/  ← Use Cases, DTOs, Service Interfaces
 LifeChart.Infrastructure/ ← EF Core, Repositories, Backup, PDF
+LifeChart.Linux/        ← Linux UI + ViewModels
 LifeChart.Tests/        ← Unit Tests
 ```
 
@@ -60,6 +72,10 @@ Windows:
 ```bash
 dotnet publish LifeChart/LifeChart.csproj -f net10.0-windows10.0.19041.0 -c Release
 ```
+
+## Usage
+
+See the official documentation: https://writebook.saschamanns.de/6/lifechart
 
 ## Disclaimer
 
