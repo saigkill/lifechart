@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.SettingsPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="12" Padding="24,16">
+
+            <!-- Backup -->
+            <Label x:Name="BackupSectionLabel" FontSize="16" FontAttributes="Bold"/>
+
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="CloudProviderLabel" FontSize="13"/>
+                <Picker x:Name="BackupProviderPicker" SelectedIndexChanged="OnBackupProviderChanged"/>
+            </VerticalStackLayout>
+
+            <!-- Nextcloud credentials — hidden unless Nextcloud is selected -->
+            <VerticalStackLayout x:Name="NextcloudSection" Spacing="8" IsVisible="False">
+                <VerticalStackLayout Spacing="4">
+                    <Label x:Name="NextcloudUrlLabel" FontSize="13"/>
+                    <Entry x:Name="NextcloudUrlEntry" Placeholder="https://cloud.example.com" Keyboard="Url"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="4">
+                    <Label x:Name="NextcloudUserLabel" FontSize="13"/>
+                    <Entry x:Name="NextcloudUserEntry"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="4">
+                    <Label x:Name="NextcloudPassLabel" FontSize="13"/>
+                    <Entry x:Name="NextcloudPassEntry" IsPassword="True"/>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Spacing="12">
+                <Switch x:Name="AutoBackupSwitch"/>
+                <Label x:Name="AutoBackupLabel" FontSize="14" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="8">
+                <Label x:Name="BackupWarningPrefixLabel" VerticalOptions="Center"/>
+                <Entry x:Name="BackupWarningDaysEntry" Keyboard="Numeric" WidthRequest="60"/>
+                <Label x:Name="BackupWarningSuffixLabel" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,4"/>
+
+            <!-- Reminders -->
+            <Label x:Name="RemindersSectionLabel" FontSize="16" FontAttributes="Bold"/>
+
+            <HorizontalStackLayout Spacing="12">
+                <Switch x:Name="EveningReminderSwitch" Toggled="OnEveningReminderToggled"/>
+                <Label x:Name="EveningReminderLabel" FontSize="14" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout x:Name="ReminderTimeRow" Spacing="8" IsVisible="False">
+                <Label x:Name="ReminderTimeLabel" VerticalOptions="Center"/>
+                <TimePicker x:Name="ReminderTimePicker"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="12">
+                <Switch x:Name="CrisisHintSwitch"/>
+                <Label x:Name="CrisisHintLabel" FontSize="14" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,4"/>
+
+            <!-- Display -->
+            <Label x:Name="DisplaySectionLabel" FontSize="16" FontAttributes="Bold"/>
+
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="InputModeLabel" FontSize="13"/>
+                <Picker x:Name="InputModePicker"/>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Spacing="12">
+                <Switch x:Name="ColorBlindSwitch"/>
+                <Label x:Name="ColorBlindLabel" FontSize="14" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,4"/>
+
+            <!-- App -->
+            <Label x:Name="AppSectionLabel" FontSize="16" FontAttributes="Bold"/>
+
+            <VerticalStackLayout Spacing="4">
+                <Label x:Name="LanguageLabel" FontSize="13"/>
+                <Picker x:Name="LanguagePicker"/>
+            </VerticalStackLayout>
+
+            <BoxView HeightRequest="8"/>
+
+            <Button x:Name="SaveButton"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#0072B2" TextColor="White"
+                    Clicked="OnSaveClicked"/>
+
+            <Label x:Name="StatusLabel" HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

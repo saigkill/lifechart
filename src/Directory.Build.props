@@ -1,0 +1,4 @@
+<Project>
+  <!-- Import local user overrides (e.g. license keys) — not committed to source control -->
+  <Import Project="Directory.Build.props.user" Condition="Exists('Directory.Build.props.user')" />
+</Project>

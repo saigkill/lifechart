@@ -1,3 +1,4 @@
+using LifeChart.Application.Localization;
 using LifeChart.Application.Settings;
 using LifeChart.Linux.Pages;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,10 +30,10 @@ public class LinuxApp : Microsoft.Maui.Controls.Application
         {
             new TodayPage(),
             new ChartPage(),
-            new NavigationPage(new MedicationsPage()) { Title = "Medikamente" },
+            new NavigationPage(new MedicationsPage()) { Title = L.Medications_Title },
             new CrisisPage(),
             new SettingsPage(),
             new AboutPage(),
         }
     };
-}
+ }

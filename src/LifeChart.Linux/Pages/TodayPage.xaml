@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.TodayPage">
+    <ScrollView>
+        <VerticalStackLayout x:Name="MainLayout" Spacing="12" Padding="24,16">
+
+            <Label x:Name="DateLabel" FontSize="16" FontAttributes="Bold"/>
+
+            <!-- Mood slider row -->
+            <VerticalStackLayout Spacing="4">
+                <HorizontalStackLayout>
+                    <Label x:Name="MoodLabel" FontSize="14" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="MoodValueLabel" FontSize="14" FontAttributes="Bold"
+                           WidthRequest="48" HorizontalTextAlignment="End"/>
+                </HorizontalStackLayout>
+                <Slider x:Name="MoodSlider" Minimum="-5" Maximum="5" Value="0"
+                        ValueChanged="OnSliderValueChanged"/>
+            </VerticalStackLayout>
+
+            <!-- Functionality slider row -->
+            <VerticalStackLayout Spacing="4">
+                <HorizontalStackLayout>
+                    <Label x:Name="FuncLabel" FontSize="14" HorizontalOptions="FillAndExpand"/>
+                    <Label x:Name="FuncValueLabel" FontSize="14" FontAttributes="Bold"
+                           WidthRequest="48" HorizontalTextAlignment="End"/>
+                </HorizontalStackLayout>
+                <Slider x:Name="FuncSlider" Minimum="-5" Maximum="5" Value="0"
+                        ValueChanged="OnSliderValueChanged"/>
+            </VerticalStackLayout>
+
+            <!-- "More" button — hidden once extended section is shown -->
+            <Button x:Name="MoreButton"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent" TextColor="CornflowerBlue"
+                    Padding="0"
+                    Clicked="OnMoreClicked"/>
+
+            <!-- Extended section — added to layout dynamically via code-behind -->
+            <VerticalStackLayout x:Name="ExtendedSection" Spacing="12">
+
+                <!-- Sleep slider row -->
+                <VerticalStackLayout Spacing="4">
+                    <HorizontalStackLayout>
+                        <Label x:Name="SleepLabel" FontSize="14" HorizontalOptions="FillAndExpand"/>
+                        <Label x:Name="SleepValueLabel" FontSize="14" FontAttributes="Bold"
+                               WidthRequest="48" HorizontalTextAlignment="End"/>
+                    </HorizontalStackLayout>
+                    <Slider x:Name="SleepSlider" Minimum="0" Maximum="24" Value="7"
+                            ValueChanged="OnSliderValueChanged"/>
+                </VerticalStackLayout>
+
+                <!-- Medication switch row -->
+                <HorizontalStackLayout Spacing="12">
+                    <Label x:Name="MedicationLabel" FontSize="14" VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"/>
+                    <Switch x:Name="MedicationSwitch"/>
+                </HorizontalStackLayout>
+
+                <!-- Menstrual cycle switch row -->
+                <HorizontalStackLayout Spacing="12">
+                    <Label x:Name="MenstrualLabel" FontSize="14" VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"/>
+                    <Switch x:Name="MenstrualSwitch"/>
+                </HorizontalStackLayout>
+
+                <!-- Hypomania switch row -->
+                <HorizontalStackLayout Spacing="12">
+                    <Label x:Name="HypomaniaLabel" FontSize="14" VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"/>
+                    <Switch x:Name="HypomaniaSwitch"/>
+                </HorizontalStackLayout>
+
+                <Label x:Name="SymptomsLabel" FontSize="13"/>
+                <Editor x:Name="SymptomsEditor" HeightRequest="60"/>
+
+                <Label x:Name="NotesLabel" FontSize="13"/>
+                <Editor x:Name="NotesEditor" HeightRequest="60"/>
+
+            </VerticalStackLayout>
+
+            <Button x:Name="SaveButton" HorizontalOptions="Center" Clicked="OnSaveClicked"/>
+
+            <Label x:Name="StatusLabel" HorizontalOptions="Center"/>
+
+            <!-- Crisis button — only visible after a critical save result -->
+            <Button x:Name="CrisisButton"
+                    HorizontalOptions="Center"
+                    BackgroundColor="OrangeRed" TextColor="White"
+                    IsVisible="False"
+                    Clicked="OnCrisisButtonClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

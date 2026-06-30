@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeChart.Linux.Pages.AboutPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="32,24" HorizontalOptions="Center">
+
+            <Label Text="LifeChart"
+                   FontSize="28" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="VersionLabel"
+                   FontSize="13" TextColor="Gray"
+                   HorizontalOptions="Center"/>
+
+            <BoxView HeightRequest="4"/>
+
+            <Label x:Name="DescriptionLabel"
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   MaximumWidthRequest="480"/>
+
+            <BoxView HeightRequest="4"/>
+
+            <Label x:Name="DeveloperSectionLabel"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="Sascha Manns"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <Label x:Name="LicenseSectionLabel"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="GNU General Public License v3.0"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <Label x:Name="CopyrightSectionLabel"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="© 2026 Sascha Manns"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <BoxView HeightRequest="8"/>
+
+            <Button x:Name="WikiButton"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent" TextColor="CornflowerBlue"
+                    Padding="0"
+                    Clicked="OnWikiClicked"/>
+
+            <Button x:Name="IssuesButton"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent" TextColor="CornflowerBlue"
+                    Padding="0"
+                    Clicked="OnIssuesClicked"/>
+
+            <BoxView HeightRequest="8"/>
+
+            <Label x:Name="ExperimentalLabel"
+                   FontSize="12" TextColor="OrangeRed"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   MaximumWidthRequest="480"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
