@@ -2,10 +2,10 @@
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Continuous Integration | [![Build & Release](https://github.com/saigkill/lifechart/actions/workflows/build.yml/badge.svg)](https://github.com/saigkill/lifechart/actions/workflows/build.yml) |
 | Bugreports             | [![GitHub issues](https://img.shields.io/github/issues/saigkill/lifechart)](https://github.com/saigkill/lifechart/issues)                                            |
-| Blog                   | [![Blog](https://img.shields.io/badge/Blog-Saigkill-blue)](https://saschamanns.de)                                                                                   |
 | Downloads all          | ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/saigkill/lifechart/total)                                                     |
 | Docs                   | https://writebook.saschamanns.de/6/lifechart                                                                                                                         |
 | Build Report           | https://saigkill.github.io/lifechart/                                                                                                                                |
+| Blog                   | [![Blog](https://img.shields.io/badge/Blog-Saigkill-blue)](https://saschamanns.de)                                                                                   |
 
 File a bug report [on Github](https://github.com/saigkill/lifechart/issues).
 
@@ -35,11 +35,11 @@ Germany: Telefonseelsorge **0800 111 0 111** (free, 24/7)
 
 ## Platforms
 
-| Platform | Status      |
-|----------|-------------|
-| Android  | Implemented |
-| Windows  | Implemented |
-| Linux    | Implemented |
+| Platform    | Status      |
+|-------------|-------------|
+| Android     | Implemented |
+| Windows     | Implemented |
+| Linux Gtk 4 | Implemented |
 
 ## Architecture
 
