@@ -156,7 +156,7 @@ jobs:
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj `
             -f net10.0-windows10.0.19041.0 `
-            -c Release
+            -c Release `
             -o out/windows          
       - name: Archive Release Linux
         uses: thedoctor0/zip-release@0.7.5
