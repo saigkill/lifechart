@@ -152,6 +152,8 @@ jobs:
         run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install MAUI workload
         run: dotnet workload install maui-windows
+      - name: Restore
+        run: dotnet restore src/LifeChart/LifeChart.csproj
       - name: Build Windows
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj `
