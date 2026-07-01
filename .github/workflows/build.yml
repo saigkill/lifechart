@@ -17,6 +17,9 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -61,6 +64,12 @@ jobs:
         with:
            name: coverage-report
            path: ./TestResults/CoverageReport
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+           path: ./TestResults/CoverageReport      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
