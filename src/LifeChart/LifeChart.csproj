@@ -9,7 +9,7 @@
 
     <!-- App info -->
     <ApplicationTitle>LifeChart</ApplicationTitle>
-    <ApplicationId>org.gnome.lifechart.maui</ApplicationId>
+    <ApplicationId>com.github.saigkill.lifechart</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 

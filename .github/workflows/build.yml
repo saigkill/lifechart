@@ -42,9 +42,7 @@ jobs:
       - name: Build
         run: dotnet build src/LifeChart.Tests/LifeChart.Tests.csproj --no-restore --configuration Release
       - name: Test
-        run: dotnet test src/LifeChart.Tests/LifeChart.Tests.csproj --no-build --verbosity normal --collect:"XPlat Code Coverage" --logger:"junit;LogFilePath=junit.xml" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --results-directory ./TestResults --configuration Release
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
+        run: dotnet test src/LifeChart.Tests/LifeChart.Tests.csproj --no-build --verbosity normal --collect:"XPlat Code Coverage" --logger:"junit;LogFilePath=junit.xml" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --results-directory ./TestResults --configuration Release      
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
