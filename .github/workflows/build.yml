@@ -155,14 +155,14 @@ jobs:
       - name: Build Windows
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj `
-            -f net10.0 `
+            -f net10.0-windows10.0.19041.0 `
             -c Release
-            -o out/windows
+            -o out/windows          
       - name: Archive Release Linux
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: 'lifechart-windows.zip'
+          filename: lifechart-windows-${{ env.MajorMinorPatch }}.zip
           path: ./out/windows
           exclusions: '*.git*'
       - name: Upload ZIP
@@ -230,7 +230,7 @@ jobs:
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: 'lifechart-linux.zip'
+          filename: lifechart-linux-${{ env.MajorMinorPatch }}.zip
           path: ./out/linux
           exclusions: '*.git*'
       - name: Upload ZIP
