@@ -6,7 +6,7 @@
     <RootNamespace>LifeChart</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ApplicationId>org.github.saigkill.lifechart</ApplicationId>
+    <ApplicationId>com.github.saigkill.lifechart</ApplicationId>
     <ApplicationTitle>LifeChart (Experimentell)</ApplicationTitle>
     <DefineConstants>$(DefineConstants);EXPERIMENTAL</DefineConstants>
     <UseMaui>true</UseMaui>
