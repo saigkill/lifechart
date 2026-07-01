@@ -22,7 +22,7 @@ jobs:
       - name: Install MAUI workload
         run: dotnet workload install maui-windows maui-tizen
       - name: Restore
-        run: dotnet restore src/LifeChart/LifeChart.csproj
+        run: dotnet restore src/LifeChart.slnx
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2026.1
         with:
