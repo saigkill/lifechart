@@ -33,13 +33,15 @@ Germany: Telefonseelsorge **0800 111 0 111** (free, 24/7)
 - Automatic backup to Google Drive or Nextcloud
 - Full anonymity — no account required, no data leaves your device without your consent
 
-## Platforms
+## Artifacts
 
-| Platform    | Status      |
-|-------------|-------------|
-| Android     | Implemented |
-| Windows     | Implemented |
-| Linux Gtk 4 | Implemented |
+| Platform    | Format                  |
+|-------------|-------------------------|
+| Android     | APK                     |
+| Windows     | ZIP                     |
+| Linux Gtk 4 | ZIP, RPM, DEB, AppImage |
+
+Download the latest verion on [Releases](https://github.com/saigkill/lifechart/releases)
 
 ## Architecture
 
