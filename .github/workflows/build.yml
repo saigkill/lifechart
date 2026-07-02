@@ -220,16 +220,25 @@ jobs:
         run: |
           dotnetpackager deb from-project \
             --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
+            --appId com.github.saigkill.lifechart \
+            --appName LifeChart \
+            --summary "LifeChart is a simple and lightweight desktop application for tracking your daily activities and habits." \
             --output ./LifeChart_${{ env.majorMinorPatch }}_amd64.deb 
       - name: Build RPM
         run: |
           dotnetpackager rpm from-project \
             --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
+            --appId com.github.saigkill.lifechart \
+            --appName LifeChart \
+            --summary "LifeChart is a simple and lightweight desktop application for tracking your daily activities and habits." \
             --output ./LifeChart-${{ env.majorMinorPatch }}.x86_64.rpm
       - name: Build AppImage
         run: |
           dotnetpackager appimage from-project \
             --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
+            --appId com.github.saigkill.lifechart \
+            --appName LifeChart \
+            --summary "LifeChart is a simple and lightweight desktop application for tracking your daily activities and habits." \
             --output ./LifeChart-${{ env.majorMinorPatch }}.appimage
       - name: Archive Release Linux
         uses: thedoctor0/zip-release@0.7.5
