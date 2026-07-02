@@ -228,7 +228,7 @@ jobs:
       - name: Build AppImage
         run: |
           dotnetpackager appimage from-project \
-            --project ./src/LifeChart/LifeChart.csproj \
+            --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
             --output ./LifeChart-${{ env.majorMinorPatch }}.appimage
       - name: Archive Release Linux
         uses: thedoctor0/zip-release@0.7.5
