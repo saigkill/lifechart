@@ -281,8 +281,9 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
-      - name: Upload Release Assets
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          find release-artifacts -type f -exec gh release upload "${{ github.ref_name }}" {} +      
+          files: |
+            release-artifacts/**/*.apk
+            release-artifacts/**/*.zip
+            release-artifacts/**/*.deb
+            release-artifacts/**/*.rpm
+            release-artifacts/**/*.appimage
