@@ -1,6 +1,7 @@
 | What                   | Status                                                                                                                                                                                  |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Continuous Integration | [![Build & Release](https://github.com/saigkill/lifechart/actions/workflows/build.yml/badge.svg)](https://github.com/saigkill/lifechart/actions/workflows/build.yml)                    |
+| Static Code Analysis   | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=saigkill_lifechart&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=saigkill_lifechart) |
 | Bugreports             | [![GitHub issues](https://img.shields.io/github/issues/saigkill/lifechart)](https://github.com/saigkill/lifechart/issues)                                                               |
 | Downloads all          | ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/saigkill/lifechart/total)                                                                        |
 | Docs                   | https://writebook.saschamanns.de/6/lifechart                                                                                                                                            |
