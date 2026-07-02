@@ -42,7 +42,7 @@ Germany: Telefonseelsorge **0800 111 0 111** (free, 24/7)
 | Windows     | ZIP                     |
 | Linux Gtk 4 | ZIP, RPM, DEB, AppImage |
 
-Download the latest verion on [Releases](https://github.com/saigkill/lifechart/releases)
+Download the latest version on [Releases](https://github.com/saigkill/lifechart/releases)
 
 ## Architecture
 
