@@ -168,7 +168,7 @@ jobs:
           path: ./out/windows
           exclusions: '*.git*'
       - name: Upload ZIP
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7
         with:
           name: windows-zip
           path: '**/*.zip'
