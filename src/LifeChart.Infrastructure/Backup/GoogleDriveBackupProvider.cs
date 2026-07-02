@@ -62,7 +62,7 @@ public class GoogleDriveBackupProvider : IBackupProvider
             f.ModifiedTime ?? DateTime.MinValue,
             long.TryParse(f.Size, out var s) ? s : 0))
             .OrderByDescending(b => b.CreatedAt)
-            ?? [];
+            ?? Enumerable.Empty<BackupInfo>();
     }
 
     public async Task RestoreAsync(BackupInfo backup, string targetPath)
