@@ -195,6 +195,8 @@ jobs:
         env:
           DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
         run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
+      - name: Install MAUI workload
+        run: dotnet workload install maui-tizen
       - name: Install GTK4 runtime libraries
         run: |
           sudo apt-get update -qq
