@@ -164,7 +164,7 @@ jobs:
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: lifechart-windows-${{ env.MajorMinorPatch }}.zip
+          filename: lifechart-windows-${{ env.majorMinorPatch }}.zip
           path: ./out/windows
           exclusions: '*.git*'
       - name: Upload ZIP
@@ -219,22 +219,22 @@ jobs:
         run: |
           dotnetpackager deb from-project \
             --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
-            --output ./LifeChart_${{ env.MajorMinorPatch }}_amd64.deb 
+            --output ./LifeChart_${{ env.majorMinorPatch }}_amd64.deb 
       - name: Build RPM
         run: |
           dotnetpackager rpm from-project \
             --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \            
-            --output ./LifeChart-${{ env.MajorMinorPatch }}.x86_64.rpm
+            --output ./LifeChart-${{ env.majorMinorPatch }}.x86_64.rpm
       - name: Build AppImage
         run: |
           dotnetpackager appimage from-project \
             --project ./src/LifeChart/LifeChart.csproj \
-            --output ./LifeChart-${{ env.MajorMinorPatch }}.appimage
+            --output ./LifeChart-${{ env.majorMinorPatch }}.appimage
       - name: Archive Release Linux
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
-          filename: lifechart-linux-${{ env.MajorMinorPatch }}.zip
+          filename: lifechart-linux-${{ env.majorMinorPatch }}.zip
           path: ./out/linux
           exclusions: '*.git*'
       - name: Upload ZIP
