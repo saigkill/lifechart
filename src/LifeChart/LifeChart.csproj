@@ -37,9 +37,4 @@
     <ProjectReference Include="..\LifeChart.Infrastructure\LifeChart.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.Maui">
-      <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.maui.core\10.0.41\lib\net10.0\Microsoft.Maui.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>
