@@ -223,7 +223,7 @@ jobs:
       - name: Build RPM
         run: |
           dotnetpackager rpm from-project \
-            --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \            
+            --project ./src/LifeChart.Linux/LifeChart.Linux.csproj \
             --output ./LifeChart-${{ env.majorMinorPatch }}.x86_64.rpm
       - name: Build AppImage
         run: |
