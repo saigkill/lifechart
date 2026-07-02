@@ -147,6 +147,7 @@ jobs:
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
       - name: BuilddirProps
+        shell: bash
         env:
           DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
         run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
