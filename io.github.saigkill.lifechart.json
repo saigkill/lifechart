@@ -40,8 +40,8 @@
         "dotnet publish src/LifeChart.Linux/LifeChart.Linux.csproj -c Release -r linux-x64 --self-contained true --source ./nuget-sources --source /usr/lib/sdk/dotnet10/nuget/packages /p:MSBuildEnableWorkloadResolver=false -o /run/build/lifechart/publish",
         "cp -r /run/build/lifechart/publish/. /app/bin/",
         "install -Dm755 /app/bin/LifeChart.Linux /app/bin/lifechart",
-        "install -Dm644 Assets/com.github.saigkill.LifeChart.png /app/share/icons/hicolor/256x256/apps/io.github.saigkill.lifechart.png",
-        "install -Dm644 Assets/com.github.saigkill.LifeChart.svg /app/share/icons/hicolor/scalable/apps/io.github.saigkill.lifechart.svg",
+        "install -Dm644 Assets/io.github.saigkill.LifeChart.png /app/share/icons/hicolor/256x256/apps/io.github.saigkill.lifechart.png",
+        "install -Dm644 Assets/io.github.saigkill.LifeChart.svg /app/share/icons/hicolor/scalable/apps/io.github.saigkill.lifechart.svg",
         "install -Dm644 Assets/io.github.saigkill.lifechart.metainfo.xml /app/share/metainfo/io.github.saigkill.lifechart.metainfo.xml",
         "install -Dm644 Assets/io.github.saigkill.lifechart.desktop /app/share/applications/io.github.saigkill.lifechart.desktop"
       ],
