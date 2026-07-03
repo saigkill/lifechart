@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=LifeChart
+Name[de]=LifeChart
+GenericName=Mood Tracker
+GenericName[de]=Stimmungstagebuch
+Comment=Track your daily mood and wellness based on the NIMH Life Chart methodology
+Comment[de]=Tägliche Stimmung und Wohlbefinden nach der NIMH Life Chart Methode erfassen
+Exec=lifechart
+Icon=com.github.saigkill.lifechart
+Type=Application
+Categories=MedicalSoftware;Utility;
+Keywords=mood;mental health;bipolar;tracker;wellness;diary;
+Keywords[de]=Stimmung;psychische Gesundheit;bipolar;Tracker;Wohlbefinden;Tagebuch;
+StartupNotify=true
+StartupWMClass=com.github.saigkill.lifechart
