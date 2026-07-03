@@ -9,7 +9,7 @@
 
     <!-- App info -->
     <ApplicationTitle>LifeChart</ApplicationTitle>
-    <ApplicationId>com.github.saigkill.lifechart</ApplicationId>
+    <ApplicationId>io.github.saigkill.lifechart</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 

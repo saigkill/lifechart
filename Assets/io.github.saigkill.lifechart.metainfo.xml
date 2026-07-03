@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.github.saigkill.lifechart</id>
+  <id>io.github.saigkill.lifechart</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
 
@@ -49,20 +49,39 @@
     <name>Sascha Manns</name>
   </developer>
 
-  <launchable type="desktop-id">com.github.saigkill.lifechart.desktop</launchable>
+  <launchable type="desktop-id">io.github.saigkill.lifechart.desktop</launchable>
 
-  <icon type="stock">com.github.saigkill.lifechart</icon>
+  <icon type="stock">io.github.saigkill.lifechart</icon>
 
   <screenshots>
-    <!-- Add screenshots here once available -->
-    <!-- <screenshot type="default">
-      <image>https://example.com/screenshot.png</image>
-      <caption>Main screen showing daily mood entry</caption>
-    </screenshot> -->
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_09-30-25-yx67kj.png</image>
+      <caption>Daily Entry</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_13-27-53-UVxU1O.png</image>
+      <caption>Daily Full Mode</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_16-52-23-uprQqa.png</image>
+      <caption>History</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_17-03-43-8BCkCA.png</image>
+      <caption>Medications</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_17-05-39-hnQo7k.png</image>
+      <caption>Add Medication</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://writebook.saschamanns.de/u/screenshot-2026-06-29_17-08-41-HLyrtZ.png</image>
+      <caption>Crisis Resources</caption>
+    </screenshot>
   </screenshots>
 
   <releases>
-    <release version="1.0.0" date="2025-01-01">
+    <release version="0.1.0" date="2025-01-01">
       <description>
         <p>Initial release.</p>
       </description>
