@@ -26,9 +26,12 @@ public partial class ChartViewModel : ObservableObject
     public async Task InitializeAsync() => await LoadChartAsync();
 
     [RelayCommand]
-    private async Task ChangePeriodAsync(int days)
+    private async Task ChangePeriodAsync(string? days)
     {
-        SelectedPeriodDays = days;
+        if (!int.TryParse(days, out var parsed))
+            return;
+
+        SelectedPeriodDays = parsed;
         await LoadChartAsync();
     }
 

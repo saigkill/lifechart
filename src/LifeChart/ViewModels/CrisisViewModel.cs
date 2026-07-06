@@ -5,6 +5,7 @@ using LifeChart.Application.Localization;
 using LifeChart.Application.UseCases.Crisis;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Linq;
 
 namespace LifeChart.ViewModels;
 
@@ -66,7 +67,7 @@ public partial class CrisisViewModel : ObservableObject
             var resources = await _getCrisisResources.ExecuteAsync(SelectedRegion.Code);
             foreach (var r in resources)
                 Resources.Add(r);
-            IsEmpty = resources.Count == 0;
+            IsEmpty = resources.Count() == 0;
         }
         catch (Exception ex)
         {
