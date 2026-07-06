@@ -71,7 +71,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<App>();
 
 #if DEBUG
-        builder.Logging.AddDebug();
+    //builder.Logging.AddDebug();
 #endif
 
         var app = builder.Build();
