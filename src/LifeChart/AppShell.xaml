@@ -20,6 +20,10 @@
                       Icon="tab_medications.png"
                       ContentTemplate="{DataTemplate pages:MedicationsPage}"
                       Route="MedicationsPage" />
+
+        <ShellContent Title="{x:Static loc:L.About_Title}"
+                      ContentTemplate="{DataTemplate pages:AboutPage}"
+                      Route="AboutPage" />
     </TabBar>
 
     <Shell.FlyoutFooter>

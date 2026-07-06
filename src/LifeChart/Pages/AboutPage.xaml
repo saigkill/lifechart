@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
+             x:Class="LifeChart.Pages.AboutPage"
+             Title="{x:Static loc:L.About_Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="32,24" HorizontalOptions="Center">
+
+            <Label Text="LifeChart"
+                   FontSize="28" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="{x:Static loc:L.About_Version}"
+                   FontSize="13" TextColor="Gray"
+                   HorizontalOptions="Center"/>
+
+            <BoxView HeightRequest="4" Color="LightGray"/>
+
+            <Label Text="{x:Static loc:L.About_Description}"
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   MaximumWidthRequest="480"/>
+
+            <BoxView HeightRequest="4" Color="LightGray"/>
+
+            <Label Text="{x:Static loc:L.About_Developer}"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="Sascha Manns"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <Label Text="{x:Static loc:L.About_License}"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="GNU General Public License v3.0"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <Label Text="{x:Static loc:L.About_Copyright}"
+                   FontSize="12" TextColor="Gray" FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="© 2026 Sascha Manns"
+                   FontSize="15" HorizontalOptions="Center"/>
+
+            <BoxView HeightRequest="8" Color="LightGray"/>
+
+            <Button Text="{x:Static loc:L.About_Wiki}"
+                    Command="{Binding OpenWikiCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent" TextColor="CornflowerBlue"
+                    Padding="0"/>
+
+            <Button Text="{x:Static loc:L.About_Issues}"
+                    Command="{Binding OpenIssuesCommand}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Transparent" TextColor="CornflowerBlue"
+                    Padding="0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

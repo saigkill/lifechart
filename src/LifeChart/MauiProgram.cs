@@ -54,6 +54,7 @@ public static class MauiProgram
         builder.Services.AddTransient<MedicationsViewModel>();
         builder.Services.AddTransient<MedicationFormViewModel>();
         builder.Services.AddTransient<SettingsViewModel>();
+        builder.Services.AddTransient<AboutViewModel>();
         builder.Services.AddTransient<CrisisViewModel>();
         builder.Services.AddTransient<OnboardingViewModel>();
         builder.Services.AddTransient<LockViewModel>();
@@ -64,6 +65,7 @@ public static class MauiProgram
         builder.Services.AddTransient<MedicationsPage>();
         builder.Services.AddTransient<MedicationFormPage>();
         builder.Services.AddTransient<SettingsPage>();
+        builder.Services.AddTransient<AboutPage>();
         builder.Services.AddTransient<CrisisPage>();
         builder.Services.AddTransient<OnboardingPage>();
         builder.Services.AddTransient<LockPage>();
