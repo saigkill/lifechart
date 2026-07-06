@@ -30,7 +30,7 @@ public static class DependencyInjection
         services.AddScoped<IMedicationRepository, MedicationRepository>();
 
         // PDF
-        services.AddScoped<IPdfRenderer, PdfSharpRenderer>();
+        services.AddScoped<IPdfRenderer, PdfRenderer>();
 
         // Backup providers
         services.AddSingleton<LocalExportProvider>();

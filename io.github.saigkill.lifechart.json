@@ -43,13 +43,15 @@
         "install -Dm644 Assets/io.github.saigkill.LifeChart.png /app/share/icons/hicolor/256x256/apps/io.github.saigkill.lifechart.png",
         "install -Dm644 Assets/io.github.saigkill.LifeChart.svg /app/share/icons/hicolor/scalable/apps/io.github.saigkill.lifechart.svg",
         "install -Dm644 Assets/io.github.saigkill.lifechart.metainfo.xml /app/share/metainfo/io.github.saigkill.lifechart.metainfo.xml",
-        "install -Dm644 Assets/io.github.saigkill.lifechart.desktop /app/share/applications/io.github.saigkill.lifechart.desktop"
+        "install -Dm644 Assets/io.github.saigkill.lifechart.desktop /app/share/applications/io.github.saigkill.lifechart.desktop",
+        "install -Dm0644 LICENSE -t $FLATPAK_DEST/share/licenses/$FLATPAK_ID/io.github.saigkill.lifechart"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/saigkill/lifechart",
-          "tag": "v0.1.0"
+          "tag": "v0.1.0",
+          "commit": "61a2cb81fe81e293010af2e9eb010ba491b972e8"
         },
         "sources.json",
         {

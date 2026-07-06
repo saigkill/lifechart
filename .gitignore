@@ -4,6 +4,7 @@ obj/
 out/
 .flatpak-builder/
 repo/
+builddir/
 
 # EF Core Migrations (generated, not committed)
 # Remove this line if you want to commit migrations

@@ -1,9 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <SixLaborsLicenseKey>$(SixLaborsLicenseKey)</SixLaborsLicenseKey>
-  </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\LifeChart.Domain\LifeChart.Domain.csproj" />
     <ProjectReference Include="..\LifeChart.Application\LifeChart.Application.csproj" />
@@ -16,8 +12,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.8" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.8" />
-    <PackageReference Include="PdfSharpCore" Version="1.3.67" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="4.0.0" />
+    <PackageReference Include="SkiaSharp" Version="3.116.1" />
   </ItemGroup>
 
   <PropertyGroup>
