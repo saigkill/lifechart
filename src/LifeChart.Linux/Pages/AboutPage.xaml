@@ -57,11 +57,11 @@
 
             <BoxView HeightRequest="8"/>
 
-            <Label x:Name="ExperimentalLabel"
+            <!--<Label x:Name="ExperimentalLabel"
                    FontSize="12" TextColor="OrangeRed"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Center"
-                   MaximumWidthRequest="480"/>
+                   MaximumWidthRequest="480"/> -->
 
         </VerticalStackLayout>
     </ScrollView>

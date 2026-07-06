@@ -132,7 +132,7 @@
 
   <!-- About -->
   <data name="About_Title" xml:space="preserve"><value>Über</value></data>
-  <data name="About_Version" xml:space="preserve"><value>Version 1.0.0 — Experimenteller Linux-Build</value></data>
+  <data name="About_Version" xml:space="preserve"><value>Version 1.0.0</value></data>
   <data name="About_Description" xml:space="preserve"><value>Ein Stimmungs- und Wellness-Tracker für Menschen mit bipolarer Störung, basierend auf der NIMH Life Chart Methodik.</value></data>
   <data name="About_Developer" xml:space="preserve"><value>Entwickler</value></data>
   <data name="About_License" xml:space="preserve"><value>Lizenz</value></data>
