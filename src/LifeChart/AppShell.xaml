@@ -3,7 +3,13 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:pages="clr-namespace:LifeChart.Pages"
        xmlns:loc="clr-namespace:LifeChart.Application.Localization;assembly=LifeChart.Application"
-       x:Class="LifeChart.AppShell">
+       x:Class="LifeChart.AppShell"
+       FlyoutBehavior="Disabled">
+
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="{x:Static loc:L.Settings_Title}"
+                     Clicked="OnSettingsClicked" />
+    </Shell.ToolbarItems>
 
     <TabBar>
         <ShellContent Title="{x:Static loc:L.Today_Title}"
@@ -21,22 +27,13 @@
                       ContentTemplate="{DataTemplate pages:MedicationsPage}"
                       Route="MedicationsPage" />
 
+        <ShellContent Title="{x:Static loc:L.Crisis_Title}"
+                      ContentTemplate="{DataTemplate pages:CrisisPage}"
+                      Route="CrisisPage" />
+
         <ShellContent Title="{x:Static loc:L.About_Title}"
                       ContentTemplate="{DataTemplate pages:AboutPage}"
                       Route="AboutPage" />
     </TabBar>
-
-    <Shell.FlyoutFooter>
-        <VerticalStackLayout Padding="16" Spacing="8">
-            <Button Text="{x:Static loc:L.Settings_Title}"
-                    Command="{Binding Source={RelativeSource Self},
-                        Path=BindingContext.NavigateToSettingsCommand}" />
-            <Button Text="🆘 Krisentelefon"
-                    TextColor="#CC0000"
-                    BackgroundColor="Transparent"
-                    Command="{Binding Source={RelativeSource Self},
-                        Path=BindingContext.NavigateToCrisisCommand}" />
-        </VerticalStackLayout>
-    </Shell.FlyoutFooter>
 
 </Shell>

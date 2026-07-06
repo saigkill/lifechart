@@ -14,8 +14,26 @@
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Center" />
 
+            <HorizontalStackLayout Spacing="12">
+                <Label Text="{x:Static loc:L.Crisis_Region}"
+                       VerticalOptions="Center" />
+                <Picker ItemsSource="{Binding Regions}"
+                        SelectedItem="{Binding SelectedRegion}"
+                        HorizontalOptions="FillAndExpand" />
+            </HorizontalStackLayout>
+
             <ActivityIndicator IsRunning="{Binding IsLoading}"
                                IsVisible="{Binding IsLoading}" />
+
+            <Label Text="{Binding ErrorMessage}"
+                   TextColor="Red"
+                   IsVisible="{Binding ErrorMessage, Converter={StaticResource IsNotNullConverter}}"
+                   HorizontalOptions="Center" />
+
+            <Label Text="{x:Static loc:L.Crisis_Empty}"
+                   IsVisible="{Binding IsEmpty}"
+                   TextColor="Gray"
+                   HorizontalOptions="Center" />
 
             <CollectionView ItemsSource="{Binding Resources}">
                 <CollectionView.ItemTemplate>
@@ -34,6 +52,13 @@
                                         CommandParameter="{Binding PhoneNumber}"
                                         BackgroundColor="#0072B2"
                                         TextColor="White" />
+                                <Button Text="{x:Static loc:L.Crisis_Website}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.OpenWebCommand}"
+                                        CommandParameter="{Binding Url}"
+                                        IsVisible="{Binding Url, Converter={StaticResource IsNotNullConverter}}"
+                                        BackgroundColor="Transparent"
+                                        TextColor="#0072B2"
+                                        Padding="0" />
                             </VerticalStackLayout>
                         </Border>
                     </DataTemplate>
@@ -42,5 +67,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

@@ -22,6 +22,11 @@
                 <Entry Placeholder="https://cloud.example.com"
                        Text="{Binding NextcloudUrl}"
                        Keyboard="Url" />
+                <Label Text="{x:Static loc:L.Common_Username}" />
+                <Entry Text="{Binding NextcloudUsername}" />
+                <Label Text="{x:Static loc:L.Common_Password}" />
+                <Entry Text="{Binding NextcloudPassword}"
+                       IsPassword="True" />
             </VerticalStackLayout>
 
             <HorizontalStackLayout Spacing="8">
