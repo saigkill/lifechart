@@ -69,7 +69,7 @@ dotnet build LifeChart.sln
 
 Android APK:
 ```bash
-dotnet publish LifeChart/LifeChart.csproj -f net10.0-android -c Release
+dotnet publish LifeChart/LifeChart.csproj -f net10.0-android36.1 -c Release
 ```
 
 Windows:

@@ -11,7 +11,7 @@
     <ApplicationTitle>LifeChart</ApplicationTitle>
     <ApplicationId>io.github.saigkill.lifechart</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
-    <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+    <ApplicationDisplayVersion>0.1.0</ApplicationDisplayVersion>
 
     <!-- Android -->
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">26.0</SupportedOSPlatformVersion>
@@ -19,7 +19,8 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     <WindowsPackageType Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">None</WindowsPackageType>
-    <TargetFrameworks>net10.0-android;net10.0-windows10.0.19041.0</TargetFrameworks>
+    <TargetFrameworks>net10.0-android36.1;net10.0-windows10.0.19041.0</TargetFrameworks>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <Version />
   </PropertyGroup>
@@ -38,4 +39,8 @@
     <ProjectReference Include="..\LifeChart.Infrastructure\LifeChart.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#512BD4" />
+  </ItemGroup>
+  
 </Project>

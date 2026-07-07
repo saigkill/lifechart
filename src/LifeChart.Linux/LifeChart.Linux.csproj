@@ -14,24 +14,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="6.7.0">
+    <PackageReference Include="GitVersion.MsBuild" Version="6.8.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.41" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.80" />
     <PackageReference Include="Microsoft.Maui.Platforms.Linux.Gtk4" Version="0.1.0-*" />
     <PackageReference Include="Microsoft.Maui.Platforms.Linux.Gtk4.Essentials" Version="0.1.0-*" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
-    <PackageReference Include="Tmds.DBus.Protocol" Version="0.92.0" />
+    <PackageReference Include="Tmds.DBus.Protocol" Version="0.94.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LifeChart.Application\LifeChart.Application.csproj" />
     <ProjectReference Include="..\LifeChart.Infrastructure\LifeChart.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#512BD4" />
   </ItemGroup>
 
 </Project>

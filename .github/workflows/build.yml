@@ -33,11 +33,7 @@ jobs:
            versionSpec: '6.7.x'
       - name: Determine Version
         id: version_step # step id used as a reference for output values
-        uses: gittools/actions/gitversion/execute@v4.5.0
-      - name: BuilddirProps
-        env:
-          DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
-        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
+        uses: gittools/actions/gitversion/execute@v4.5.0      
       - name: Install MAUI workload
         run: dotnet workload install maui-tizen
       - name: Restore
@@ -92,11 +88,7 @@ jobs:
           versionSpec: '6.7.x'
       - name: Determine Version
         id: version_step # step id used as a reference for output values
-        uses: gittools/actions/gitversion/execute@v4.5.0
-      - name: BuilddirProps
-        env:
-          DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
-        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
+        uses: gittools/actions/gitversion/execute@v4.5.0      
       - name: Install MAUI workload
         run: dotnet workload install maui-android
       - name: Decode keystore
@@ -104,25 +96,35 @@ jobs:
       - name: Build Play Store APK
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj \
-            -f net10.0-android \
+            -f net10.0-android36.1 \
             -c Release \
+            -o out/google \
             /p:DefineConstants="GOOGLE_SERVICES" \
             /p:AndroidKeyStore=true \
             /p:AndroidSigningKeyStore=../../lifechart.keystore \
             /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
             /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
             /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
+          for f in out/google/*.apk; do
+            base=$(basename "$f" .apk)
+            mv "$f" "out/google/${base}-google.apk"
+          done
       - name: Build F-Droid APK
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj \
-            -f net10.0-android \
+            -f net10.0-android36.1 \
             -c Release \
+            -o out/fdroid \
             /p:DefineConstants="FDROID" \
             /p:AndroidKeyStore=true \
             /p:AndroidSigningKeyStore=../../lifechart.keystore \
             /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
             /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
             /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
+          for f in out/fdroid/*.apk; do
+            base=$(basename "$f" .apk)
+            mv "$f" "out/fdroid/${base}-fdroid.apk"
+          done
       - name: Upload APKs
         uses: actions/upload-artifact@v7.0.1
         with:
@@ -147,11 +149,6 @@ jobs:
       - name: Determine Version
         id: version_step # step id used as a reference for output values
         uses: gittools/actions/gitversion/execute@v4.5.0
-      - name: BuilddirProps
-        shell: bash
-        env:
-          DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
-        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
       - name: Install MAUI workload
         run: dotnet workload install maui-windows
       - name: Restore
@@ -192,11 +189,7 @@ jobs:
           versionSpec: '6.7.x'
       - name: Determine Version
         id: version_step # step id used as a reference for output values
-        uses: gittools/actions/gitversion/execute@v4.5.0
-      - name: BuilddirProps
-        env:
-          DIRECTORYPROPS: ${{ secrets.DIRECTORYPROPS }}
-        run: printf '%s' "$DIRECTORYPROPS" > src/Directory.Build.props.user
+        uses: gittools/actions/gitversion/execute@v4.5.0      
       - name: Install MAUI workload
         run: dotnet workload install maui-tizen android
       - name: Install GTK4 runtime libraries
@@ -264,20 +257,20 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.1
         with:
           name: android-apks
           path: release-artifacts
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.1
         with:
           name: windows-zip
           path: release-artifacts
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8.0.1
         with:
           name: linux-artifacts
           path: release-artifacts
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3.0.1
         with:
           draft: false
           prerelease: false
