@@ -92,8 +92,13 @@ jobs:
       - name: Install MAUI workload
         run: dotnet workload install maui-android
       - name: Decode keystore
-        run: echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > lifechart.keystore
+        env:
+          ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE }}
+        run: echo "$ANDROID_KEYSTORE_B64" | base64 -d > lifechart.keystore
       - name: Build Play Store APK
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj \
             -f net10.0-android36.1 \
@@ -102,14 +107,17 @@ jobs:
             /p:DefineConstants="GOOGLE_SERVICES" \
             /p:AndroidKeyStore=true \
             /p:AndroidSigningKeyStore=../../lifechart.keystore \
-            /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
-            /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
-            /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
+            /p:AndroidSigningKeyAlias=$KEY_ALIAS \
+            /p:AndroidSigningKeyPass=$KEY_PASSWORD \
+            /p:AndroidSigningStorePass=$KEY_PASSWORD
           for f in out/google/*.apk; do
             base=$(basename "$f" .apk)
             mv "$f" "out/google/${base}-google.apk"
           done
       - name: Build F-Droid APK
+        env:
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           dotnet publish src/LifeChart/LifeChart.csproj \
             -f net10.0-android36.1 \
@@ -118,9 +126,9 @@ jobs:
             /p:DefineConstants="FDROID" \
             /p:AndroidKeyStore=true \
             /p:AndroidSigningKeyStore=../../lifechart.keystore \
-            /p:AndroidSigningKeyAlias=${{ secrets.KEY_ALIAS }} \
-            /p:AndroidSigningKeyPass=${{ secrets.KEY_PASSWORD }} \
-            /p:AndroidSigningStorePass=${{ secrets.KEY_PASSWORD }}
+            /p:AndroidSigningKeyAlias=$KEY_ALIAS \
+            /p:AndroidSigningKeyPass=$KEY_PASSWORD \
+            /p:AndroidSigningStorePass=$KEY_PASSWORD
           for f in out/fdroid/*.apk; do
             base=$(basename "$f" .apk)
             mv "$f" "out/fdroid/${base}-fdroid.apk"

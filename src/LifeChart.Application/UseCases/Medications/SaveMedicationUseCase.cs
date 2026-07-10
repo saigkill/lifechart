@@ -1,3 +1,4 @@
+using System.Globalization;
 using LifeChart.Application.DTOs;
 using LifeChart.Domain.Medications;
 
@@ -13,7 +14,7 @@ public class SaveMedicationUseCase
     public async Task ExecuteAsync(SaveMedicationDto dto)
     {
         var intakeTimes = dto.IntakeTimes
-            .Select(i => new IntakeTime(TimeOnly.Parse(i.Time), i.DoseCount))
+            .Select(i => new IntakeTime(TimeOnly.Parse(i.Time, CultureInfo.CurrentCulture), i.DoseCount))
             .ToList();
 
         if (dto.Id == 0)

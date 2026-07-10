@@ -33,7 +33,7 @@ public class MoodChartDrawable : IDrawable
         canvas.FillRectangle(dirtyRect);
 
         DrawGrid(canvas, chartW, chartH);
-        DrawAxes(canvas, chartW, chartH, w, h);
+        DrawAxes(canvas, chartW, chartH);
         DrawSeries(canvas, chartW, chartH);
     }
 
@@ -49,7 +49,7 @@ public class MoodChartDrawable : IDrawable
         }
     }
 
-    private void DrawAxes(ICanvas canvas, float chartW, float chartH, float w, float h)
+    private void DrawAxes(ICanvas canvas, float chartW, float chartH)
     {
         canvas.StrokeColor = AxisColor;
         canvas.StrokeSize = 1.5f;

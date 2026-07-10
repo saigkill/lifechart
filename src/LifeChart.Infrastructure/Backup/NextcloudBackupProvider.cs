@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Xml.Linq;
@@ -119,7 +120,7 @@ public class NextcloudBackupProvider : IBackupProvider
                 var fileName = Uri.UnescapeDataString(href.Split('/').Last());
                 var lastModStr = r.Descendants(dav + "getlastmodified")
                     .FirstOrDefault()?.Value ?? string.Empty;
-                DateTime.TryParse(lastModStr, out var lastMod);
+                DateTime.TryParse(lastModStr, CultureInfo.CurrentCulture, out var lastMod);
                 var sizeStr = r.Descendants(dav + "getcontentlength")
                     .FirstOrDefault()?.Value ?? "0";
                 long.TryParse(sizeStr, out var size);

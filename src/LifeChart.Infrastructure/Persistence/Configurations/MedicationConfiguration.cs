@@ -1,3 +1,4 @@
+using System.Globalization;
 using LifeChart.Domain.Medications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -21,7 +22,7 @@ public class MedicationConfiguration : IEntityTypeConfiguration<Medication>
             b.Property(i => i.Time)
                 .HasConversion(
                     v => v.ToString("HH:mm"),
-                    v => TimeOnly.Parse(v));
+                    v => TimeOnly.Parse(v, CultureInfo.CurrentCulture));
             b.Property(i => i.DoseCount);
         });
     }

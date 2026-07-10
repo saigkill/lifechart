@@ -17,7 +17,7 @@
     <!-- Akkuoptimierung deaktivieren -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
-    <application android:label="LifeChart" android:allowBackup="true">
+    <application android:label="LifeChart" android:allowBackup="true" android:dataExtractionRules="@xml/extraction_rules">
 
         <receiver
             android:name=".Receivers.MedicationAlarmReceiver"

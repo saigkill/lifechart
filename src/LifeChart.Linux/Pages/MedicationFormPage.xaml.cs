@@ -1,3 +1,4 @@
+using System.Globalization;
 using LifeChart.Application.DTOs;
 using LifeChart.Application.Interfaces;
 using LifeChart.Application.Localization;
@@ -38,7 +39,7 @@ public partial class MedicationFormPage : ContentPage
             MinStockEntry.Text = existing.MinStock.ToString();
             CurrentStockEntry.Text = existing.CurrentStock.ToString();
             foreach (var it in existing.IntakeTimes)
-                AddIntakeRow(TimeOnly.Parse(it.Time), it.DoseCount);
+                AddIntakeRow(TimeOnly.Parse(it.Time, CultureInfo.CurrentCulture), it.DoseCount);
         }
 
         if (_intakeRows.Count == 0)

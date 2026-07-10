@@ -266,10 +266,11 @@ public class PdfRenderer : IPdfRenderer
             ctx.EnsureSpace(14);
 
             var symptoms = entry.Symptoms is { Length: > 0 }
-                ? entry.Symptoms.Length > 40
-                    ? entry.Symptoms[..37] + "..."
-                    : entry.Symptoms
+                ? entry.Symptoms
                 : "-";
+
+            if (symptoms.Length > 40)
+                symptoms = symptoms[..37] + "...";
 
             string[] cells =
             [
