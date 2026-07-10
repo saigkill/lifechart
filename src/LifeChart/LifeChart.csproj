@@ -41,6 +41,6 @@
 
   <ItemGroup>
     <MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#512BD4" />
-  </ItemGroup>
+    </ItemGroup>
   
 </Project>

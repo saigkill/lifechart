@@ -30,7 +30,8 @@
         <receiver
             android:name=".Receivers.BootReceiver"
             android:exported="true">
-            <intent-filter>
+            <intent-filter
+                android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>

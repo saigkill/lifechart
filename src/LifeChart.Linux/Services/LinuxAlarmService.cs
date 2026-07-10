@@ -70,7 +70,7 @@ public class LinuxAlarmService : IAlarmService
         await ReloadAsync();
     }
 
-    private async Task<string> CreateMedicationTimerAsync(MedicationDto med, IntakeTimeDto intake)
+    private static async Task<string> CreateMedicationTimerAsync(MedicationDto med, IntakeTimeDto intake)
     {
         var safeName = SafeUnitName(med.Name);
         var safeTime = intake.Time.Replace(":", "");
@@ -103,7 +103,7 @@ public class LinuxAlarmService : IAlarmService
         return timerPath;
     }
 
-    private async Task<string> CreateEveningReminderTimerAsync(TimeOnly time)
+    private static async Task<string> CreateEveningReminderTimerAsync(TimeOnly time)
     {
         const string unitName = $"{UnitPrefix}-evening";
 
