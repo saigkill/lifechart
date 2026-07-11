@@ -4,7 +4,7 @@ Cross-platform mood tracker (.NET MAUI, Android + Windows). Clean Architecture +
 
 ## 1. Global Guidelines
 
-Use ~/.config/opencode/AGENTS.md 
+Read and follow ~/.config/opencode/AGENTS.md 
 
 ## 2. Solution layout
 

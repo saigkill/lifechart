@@ -88,7 +88,3 @@ LifeChart is a personal self-monitoring tool. It is not a medical device as defi
 ## License
 
 GNU General Public License v3 or later — see [LICENSE](LICENSE).
-
-## Related
-
-- [GNOME LifeChart](https://gitlab.gnome.org/saigkill/gnome-lifechart) — the Linux desktop version (Vala/GTK4)
